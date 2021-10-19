@@ -4,6 +4,7 @@
 #include <QDebug>
 #include "connection.h"
 
+//test connection Git
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
