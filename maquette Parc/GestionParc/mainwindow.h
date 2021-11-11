@@ -1,9 +1,10 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include <QDialog>
 #include <QMainWindow>
 #include <QDebug>
 #include "animal.h"
+#include "animaux.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -22,13 +23,13 @@ public:
 
 private slots:
 
-    void on_pb_ajouter_clicked();
+    void on_pb_gererAn_clicked();
 
-    void on_id_sup_clicked();
+    void on_pb_pageFB_clicked();
 
 private:
     Ui::MainWindow *ui;
-    animal a;
+    //animaux *animaux;
 };
 
 #endif // MAINWINDOW_H

@@ -1,8 +1,15 @@
 #ifndef ANIMAL_H
 #define ANIMAL_H
-
+#include <QDialog>
 #include <QString>
 #include <QSqlQueryModel>
+#include <iostream>
+#include <QApplication>
+#include <QMainWindow>
+#include <QPainter>
+#include <QSqlQuery>
+#include <QWidget>
+
 class animal
 {
 public:
@@ -21,6 +28,16 @@ public:
         bool ajouter();
         QSqlQueryModel* afficher();
         bool supprimer(int ref);
+        bool modifier(int,int,QString,QString,QString);
+        int Stat_partie2() ;
+        int Stat_partie3() ;
+        int Stat_partie4() ;
+        int Stat_partie5();
+        QSqlQueryModel* trieranimaux();
+        QSqlQueryModel* trieranimauxType();
+        QSqlQueryModel* rechercheRef(int ref);
+protected:
+        void paintEvent(QPaintEvent *e) ;
 private:
         int reference,naissance;
         QString type,etat_sanitaire,etat_cage;
