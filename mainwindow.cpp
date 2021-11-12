@@ -6,25 +6,37 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+ myDB = QSqlDatabase::addDatabase("QSQLITE");
+ myDB.setDatabaseName("C:/oraclexe/app/oracle/product/11.2.0/server/database/hc_xe.dat");
+ if(!myDB.open())
+     ui->label->setText("failed to open the database");
+ else
+     ui->label->setText("connected...");
+
+
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-void MainWindow::on_pb_ajouter_clicked()
+
+
+
+void MainWindow::on_login_clicked()
 {
-int matricule=ui->le_matricule->text().toInt();
-    int type=ui->le_type->text().toInt();
-    QString nom=ui->le_nom->text();
-    QString prenom=ui->le_prenom->text();
-    QString date=ui->le_date->text();
+    {
+        QString username = ui->lineEdit_username->text();
+        QString password = ui->lineEdit_password->text();
 
-
-
-employe E(matricule,type,nom,prenom,date);
-
-
+        if(username ==  "test" && password == "test") {
+            QMessageBox::information(this, "Login", "Username and password is correct");
+            //hide();
+            Employee = new employee(this);
+            Employee->show();
+        }
+        else {
+            QMessageBox::warning(this,"Login", "Username and password is not correct");
+        }
+    }
 }
-
-

@@ -1,31 +1,91 @@
+
+#include "QSqlQuery"
+#include<QDebug>
+#include <QObject>
 #include "employe.h"
-#include <QSqlQuery>
-{
-  matricule=0; type=0; nom=""; prenom="";date=""
+
+
+employe::employe()
+{   matricule="";
+    type="";
+    nom= "";
+    prenom="";
+    age="";
+    matricule_d="";
+}
+employe::employe(QString matricule ,QString type ,QString nom, QString prenom, QString age, QString matricule_d){
+    this->matricule=matricule; this->type=type; this->nom=nom; this->prenom=prenom; this->age=age;this->matricule_d=matricule_d;
+}
+QString employe::getmatricule(){return matricule;}
+QString employe::gettype(){return matricule;}
+QString employe::getnom(){return nom;}
+QString employe ::getprenom(){return  prenom;}
+QString employe :: getage(){return age;}
+QString employe::getmatricule_d(){return matricule_d;}
+
+void employe::setmatricule(QString matricule){this->matricule=matricule;}
+void employe::settype(QString type){this->type=type;}
+void employe::setnom(QString nom){this->nom=nom;}
+void employe ::setprenom(QString prenom){this->prenom=prenom;}
+void employe ::setage(QString age){this->age=age;}
+void employe::setmatricule_d(QString matricule_d){this->matricule_d=matricule_d;}
+
+bool employe::ajouter(){
+
+
+    QSqlQuery query;
+
+          query.prepare("INSERT INTO EMPLOYE (matricule, type, nom, prenom , age,matricule_d) "
+                        "VALUES (:MATRICULE, :TYPE, :NOM, :PRENOM, :AGE, :MATRICULE_D)");
+          query.bindValue(0,matricule);
+          query.bindValue(1,type);
+          query.bindValue(2,nom);
+          query.bindValue(3,prenom);
+          query.bindValue(4,age);
+          query.bindValue(5,matricule_d);
+
+          return  query.exec();
+
+
 
 }
- employe::employe(int matricule,int type, QString nom, QString prenom, QString date )
- { this->matricule=matricule; this->type=type; this->nom=nom; this->prenom=prenom; this->date=date;}
- int employe::getmatricule(){return  matricule;}
- int employe::gettype(){return  type;}
- QString employe::getnom(){return nom;}
- QString employe::getprenom(){return prenom;}
- QString employe::getdate(){return date;}
- void employe::setmatricume(int matricule){this->matricule=matricule;}
- void employe::settype(int type){this->type=type;}
- void employe::setnom(QString nom){this->nom=nom;}
- void employe::setprenom(QString prenom){this->prenom=prenom;}
- void employe::setdate(QString date){this->date=date;}
-bool employe::ajouter();
-{bool test=false;
-QSqlQuery query;
-      query.prepare("INSERT INTO person (id, forename, surname) "
-                    "VALUES (:id, :forename, :surname)");
-      query.bindValue(":id", 1001);
-      query.bindValue(":forename", "Bart");
-      query.bindValue(":surname", "Simpson");
-      query.exec();
-return test;
+QSqlQueryModel* employe::afficher(){
+
+    QSqlQueryModel *model = new QSqlQueryModel();
+          model->setQuery("SELECT* FROM EMPLOYE");
+          model->setHeaderData(0, Qt::Horizontal, QObject::tr("matricule"));
+          model->setHeaderData(1, Qt::Horizontal, QObject::tr("type"));
+          model->setHeaderData(2, Qt::Horizontal, QObject::tr("nom"));
+          model->setHeaderData(3, Qt::Horizontal, QObject::tr("prenom"));
+          model->setHeaderData(4, Qt::Horizontal, QObject::tr("age"));
+          model->setHeaderData(5, Qt::Horizontal, QObject::tr("matricule_d"));
+
+    return model;
+}
+bool employe::supprimer(QString matricule){
+      QSqlQuery query;
 
 
+
+
+    query.prepare("Delete from EMPLOYE where matricule=:matricule");
+    query.bindValue(":matricule", matricule);
+
+    return  query.exec();
+
+
+
+}
+bool employe::modifier(QString matricule, QString type, QString nom, QString prenom, QString age ,QString matricule_d){
+    QSqlQuery query;
+
+       query.prepare(" UPDATE EMPLOYE set matricule=:matricule ,type=:type,nom=:nom ,prenom=:prenom, age=:age, matricule_d=:matricule_d  where matricule=:matricule");
+       query.bindValue(":matricule",matricule);
+       query.bindValue(":type",type);
+       query.bindValue(":nom",nom);
+       query.bindValue(":prenom",prenom);
+       query.bindValue(":age",age);
+       query.bindValue(":matricule_d",matricule_d);
+
+       return query.exec();
 }
