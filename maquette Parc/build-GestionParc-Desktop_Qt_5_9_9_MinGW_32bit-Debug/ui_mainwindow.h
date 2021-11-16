@@ -75,7 +75,7 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
         label_9->setText(QString());
         pb_gererAn->setText(QApplication::translate("MainWindow", "G\303\251rer Animaux", Q_NULLPTR));
-        pb_pageFB->setText(QApplication::translate("MainWindow", "Ouvrir Page Facebook", Q_NULLPTR));
+        pb_pageFB->setText(QApplication::translate("MainWindow", "Ouvrir Site Web", Q_NULLPTR));
     } // retranslateUi
 
 };

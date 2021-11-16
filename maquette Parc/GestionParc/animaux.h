@@ -5,6 +5,10 @@
 #include <QDebug>
 #include "animal.h"
 #include <QFileDialog>
+#include <QSortFilterProxyModel>
+#include <QtCharts>
+#include <QChartView>
+#include <QPieSeries>
 
 namespace Ui {
 class animaux;
@@ -17,6 +21,8 @@ class animaux : public QDialog
 public:
     explicit animaux(QWidget *parent = nullptr);
     ~animaux();
+    QSortFilterProxyModel *proxy_anim;
+    void show_anim();
 
 private slots:
     void on_pb_ajouter_clicked();
@@ -41,9 +47,19 @@ private slots:
 
     void on_pb_image_clicked();
 
+    void on_le_recherche_textChanged(const QString &arg1);
+
+
+    void on_anim_col_currentIndexChanged(int index);
+
+    void on_pb_trier_etat_sanitaire_clicked();
+
+    void on_pb_statistics_clicked();
+
 private:
     Ui::animaux *ui;
     animal a;
+    int sel_col_anim=-1;
 };
 
 #endif // ANIMAUX_H

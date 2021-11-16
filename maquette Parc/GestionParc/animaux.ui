@@ -18,8 +18,8 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>781</width>
-     <height>561</height>
+     <width>791</width>
+     <height>541</height>
     </rect>
    </property>
    <property name="currentIndex">
@@ -29,25 +29,12 @@
     <attribute name="title">
      <string>Consulter les animaux</string>
     </attribute>
-    <widget class="QPushButton" name="pbajouter">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>90</y>
-       <width>111</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Ajouter </string>
-     </property>
-    </widget>
     <widget class="QPushButton" name="pb_trier">
      <property name="geometry">
       <rect>
-       <x>150</x>
+       <x>130</x>
        <y>90</y>
-       <width>111</width>
+       <width>101</width>
        <height>31</height>
       </rect>
      </property>
@@ -71,9 +58,9 @@
     <widget class="QPushButton" name="pb_trier_type">
      <property name="geometry">
       <rect>
-       <x>270</x>
+       <x>240</x>
        <y>90</y>
-       <width>111</width>
+       <width>91</width>
        <height>31</height>
       </rect>
      </property>
@@ -215,7 +202,7 @@
     <widget class="QPushButton" name="pb_image">
      <property name="geometry">
       <rect>
-       <x>390</x>
+       <x>490</x>
        <y>90</y>
        <width>121</width>
        <height>31</height>
@@ -228,9 +215,9 @@
     <widget class="QLabel" name="label_img">
      <property name="geometry">
       <rect>
-       <x>560</x>
+       <x>620</x>
        <y>10</y>
-       <width>201</width>
+       <width>141</width>
        <height>121</height>
       </rect>
      </property>
@@ -238,8 +225,92 @@
       <string/>
      </property>
     </widget>
+    <widget class="QLineEdit" name="le_recherche">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>90</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>recherche</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="anim_col">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>101</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="currentText">
+      <string>All</string>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <item>
+      <property name="text">
+       <string>All</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Reference</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Naissance</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Etat Sanitaire</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Type</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Etat Cage</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QPushButton" name="pb_trier_etat_sanitaire">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>90</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Trier par Etat Sanitaire</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pb_statistics">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>60</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Statistiques</string>
+     </property>
+    </widget>
     <zorder>le_cadre</zorder>
-    <zorder>pbajouter</zorder>
     <zorder>pb_trier</zorder>
     <zorder>pb_rechRef</zorder>
     <zorder>pb_trier_type</zorder>
@@ -255,6 +326,10 @@
     <zorder>le_cage_3</zorder>
     <zorder>pb_image</zorder>
     <zorder>label_img</zorder>
+    <zorder>le_recherche</zorder>
+    <zorder>anim_col</zorder>
+    <zorder>pb_trier_etat_sanitaire</zorder>
+    <zorder>pb_statistics</zorder>
    </widget>
    <widget class="QWidget" name="tab_5">
     <attribute name="title">
@@ -1007,6 +1082,92 @@
     <zorder>lab_seins</zorder>
     <zorder>lab_malades</zorder>
     <zorder>textBrowser</zorder>
+   </widget>
+   <widget class="QWidget" name="tab_6">
+    <attribute name="title">
+     <string>Statistiques 1</string>
+    </attribute>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>-10</x>
+       <y>0</y>
+       <width>791</width>
+       <height>531</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../../../Esprit/2A16/Semestre 1/Projet C++/ZOO'RNI/charte essai 1.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QFrame" name="horizontal_stat">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>60</y>
+       <width>641</width>
+       <height>411</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout"/>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_7">
+    <attribute name="title">
+     <string>Statistique 2</string>
+    </attribute>
+    <widget class="QLabel" name="label_32">
+     <property name="geometry">
+      <rect>
+       <x>-10</x>
+       <y>0</y>
+       <width>791</width>
+       <height>531</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../../../Esprit/2A16/Semestre 1/Projet C++/ZOO'RNI/charte essai 1.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QFrame" name="horizontal_stat_etat">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>60</y>
+       <width>671</width>
+       <height>431</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <property name="spacing">
+       <number>4</number>
+      </property>
+      <property name="leftMargin">
+       <number>7</number>
+      </property>
+      <property name="topMargin">
+       <number>7</number>
+      </property>
+      <property name="rightMargin">
+       <number>7</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+     </layout>
+    </widget>
    </widget>
   </widget>
  </widget>

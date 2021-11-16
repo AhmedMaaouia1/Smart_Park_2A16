@@ -14,15 +14,15 @@
 #include <iostream>
 
 
-animal::animal()
+animal::animal()  //Constructeur par défaut
 {
-    reference=0;
+        reference=0;
         naissance=0;
         type="";
         etat_cage="propre";
         etat_sanitaire="sein";
 }
-animal::animal(int ref,int an,QString etatsan,QString type,QString etatcage)
+animal::animal(int ref,int an,QString etatsan,QString type,QString etatcage) //Constructeur paramétré
 {
     reference=ref;
     naissance=an;
@@ -30,6 +30,7 @@ animal::animal(int ref,int an,QString etatsan,QString type,QString etatcage)
     etat_sanitaire=etatsan;
     etat_cage=etatcage;
 }
+
 int animal::getref(){return reference;}
 int animal::getan(){return naissance;}
 QString animal::gettype(){return type;}
@@ -43,9 +44,9 @@ void animal::set_etat_cage(QString e){etat_cage=e;}
 
 bool animal::ajouter()
 {
-    QString ref_string=QString::number(reference);
+    QString ref_string=QString::number(reference);       //On a changé le type de reference puisqu'il est remplis par l'utilisateur comme String
     QString naissance_string=QString::number(naissance);
-    QSqlQuery query;
+    QSqlQuery query;  //Requete appelée
           query.prepare("INSERT INTO ANIMAUX (REFERENCE, NAISSANCE, ETAT_SANITAIRE, TYPE, ETAT_CAGE) "
                         "VALUES (:REFERENCE, :NAISSANCE, :ETAT_SANITAIRE, :TYPE, :ETAT_CAGE)");
           query.bindValue(":REFERENCE", ref_string);
@@ -87,6 +88,18 @@ QSqlQueryModel* animal::trieranimauxType()
 {
     QSqlQueryModel* model=new QSqlQueryModel();
          model->setQuery("SELECT* FROM ANIMAUX ORDER BY TYPE");
+         model->setHeaderData(0, Qt::Horizontal, QObject::tr("Reference"));
+         model->setHeaderData(1, Qt::Horizontal, QObject::tr("Date naissance"));
+         model->setHeaderData(2, Qt::Horizontal, QObject::tr("Etat Sanitaire"));
+         model->setHeaderData(3, Qt::Horizontal, QObject::tr("Type"));
+         model->setHeaderData(4, Qt::Horizontal, QObject::tr("Etat de Cage"));
+    return model;
+}
+
+QSqlQueryModel* animal::trieranimauxEtatSanitaire()
+{
+    QSqlQueryModel* model=new QSqlQueryModel();
+         model->setQuery("SELECT* FROM ANIMAUX ORDER BY ETAT_SANITAIRE");
          model->setHeaderData(0, Qt::Horizontal, QObject::tr("Reference"));
          model->setHeaderData(1, Qt::Horizontal, QObject::tr("Date naissance"));
          model->setHeaderData(2, Qt::Horizontal, QObject::tr("Etat Sanitaire"));
@@ -169,24 +182,9 @@ int animal::Stat_partie5()
 return count ;
 }
 
-QSqlQueryModel* animal::rechercheRef(int ref)
+/*QSqlQueryModel* animal::rechercheRef()
 {
-        //QMessageBox msgBox;
-        //QSqlQuery query;
-        //QString ref_string=QString::number(ref);
-        //query.prepare("SELECT * from ANIMAUX  where REFERENCE=:ref");
-        //query.bindValue(":ref", ref_string);
-        //if (query.exec() && query.next())
-        //{
-        //        return true;
-        //}
-        //else
-        //{
 
-        //    msgBox.setText("Réfèrence n'existe pas");
-        //    msgBox.exec();
-        //    return false;
-        //}
              QSqlQueryModel* model=new QSqlQueryModel();
              model->setQuery("select * from ANIMAUX ");
              model->setHeaderData(0, Qt::Horizontal, QObject::tr("Reference"));
@@ -197,4 +195,4 @@ QSqlQueryModel* animal::rechercheRef(int ref)
 
              return model;
 
-}
+}*/

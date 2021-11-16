@@ -6,6 +6,8 @@ CONFIG += c++11
 QT+= sql
 CONFIG += console
 QT+= gui
+QT += core gui
+QT += core gui charts
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings

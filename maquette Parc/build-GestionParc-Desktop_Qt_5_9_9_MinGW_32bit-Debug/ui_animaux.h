@@ -15,6 +15,8 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QFrame>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -32,7 +34,6 @@ class Ui_animaux
 public:
     QTabWidget *Ajouter_animal;
     QWidget *tab_3;
-    QPushButton *pbajouter;
     QPushButton *pb_trier;
     QPushButton *pb_rechRef;
     QPushButton *pb_trier_type;
@@ -49,6 +50,10 @@ public:
     QLineEdit *le_cage_3;
     QPushButton *pb_image;
     QLabel *label_img;
+    QLineEdit *le_recherche;
+    QComboBox *anim_col;
+    QPushButton *pb_trier_etat_sanitaire;
+    QPushButton *pb_statistics;
     QWidget *tab_5;
     QLabel *label_7;
     QLabel *label_statistiqyes_3;
@@ -108,6 +113,14 @@ public:
     QTextEdit *textEdit_3;
     QTextEdit *textEdit_4;
     QTextBrowser *textBrowser;
+    QWidget *tab_6;
+    QLabel *label_12;
+    QFrame *horizontal_stat;
+    QHBoxLayout *horizontalLayout;
+    QWidget *tab_7;
+    QLabel *label_32;
+    QFrame *horizontal_stat_etat;
+    QHBoxLayout *horizontalLayout_3;
 
     void setupUi(QDialog *animaux)
     {
@@ -116,21 +129,18 @@ public:
         animaux->resize(844, 587);
         Ajouter_animal = new QTabWidget(animaux);
         Ajouter_animal->setObjectName(QStringLiteral("Ajouter_animal"));
-        Ajouter_animal->setGeometry(QRect(10, 10, 781, 561));
+        Ajouter_animal->setGeometry(QRect(10, 10, 791, 541));
         tab_3 = new QWidget();
         tab_3->setObjectName(QStringLiteral("tab_3"));
-        pbajouter = new QPushButton(tab_3);
-        pbajouter->setObjectName(QStringLiteral("pbajouter"));
-        pbajouter->setGeometry(QRect(30, 90, 111, 31));
         pb_trier = new QPushButton(tab_3);
         pb_trier->setObjectName(QStringLiteral("pb_trier"));
-        pb_trier->setGeometry(QRect(150, 90, 111, 31));
+        pb_trier->setGeometry(QRect(130, 90, 101, 31));
         pb_rechRef = new QPushButton(tab_3);
         pb_rechRef->setObjectName(QStringLiteral("pb_rechRef"));
         pb_rechRef->setGeometry(QRect(10, 450, 151, 31));
         pb_trier_type = new QPushButton(tab_3);
         pb_trier_type->setObjectName(QStringLiteral("pb_trier_type"));
-        pb_trier_type->setGeometry(QRect(270, 90, 111, 31));
+        pb_trier_type->setGeometry(QRect(240, 90, 91, 31));
         le_cadre = new QLabel(tab_3);
         le_cadre->setObjectName(QStringLiteral("le_cadre"));
         le_cadre->setGeometry(QRect(-10, 0, 791, 531));
@@ -168,13 +178,24 @@ public:
         le_cage_3->setGeometry(QRect(630, 470, 113, 22));
         pb_image = new QPushButton(tab_3);
         pb_image->setObjectName(QStringLiteral("pb_image"));
-        pb_image->setGeometry(QRect(390, 90, 121, 31));
+        pb_image->setGeometry(QRect(490, 90, 121, 31));
         label_img = new QLabel(tab_3);
         label_img->setObjectName(QStringLiteral("label_img"));
-        label_img->setGeometry(QRect(560, 10, 201, 121));
+        label_img->setGeometry(QRect(620, 10, 141, 121));
+        le_recherche = new QLineEdit(tab_3);
+        le_recherche->setObjectName(QStringLiteral("le_recherche"));
+        le_recherche->setGeometry(QRect(20, 90, 101, 31));
+        anim_col = new QComboBox(tab_3);
+        anim_col->setObjectName(QStringLiteral("anim_col"));
+        anim_col->setGeometry(QRect(20, 60, 101, 22));
+        pb_trier_etat_sanitaire = new QPushButton(tab_3);
+        pb_trier_etat_sanitaire->setObjectName(QStringLiteral("pb_trier_etat_sanitaire"));
+        pb_trier_etat_sanitaire->setGeometry(QRect(340, 90, 141, 31));
+        pb_statistics = new QPushButton(tab_3);
+        pb_statistics->setObjectName(QStringLiteral("pb_statistics"));
+        pb_statistics->setGeometry(QRect(130, 60, 101, 21));
         Ajouter_animal->addTab(tab_3, QString());
         le_cadre->raise();
-        pbajouter->raise();
         pb_trier->raise();
         pb_rechRef->raise();
         pb_trier_type->raise();
@@ -190,6 +211,10 @@ public:
         le_cage_3->raise();
         pb_image->raise();
         label_img->raise();
+        le_recherche->raise();
+        anim_col->raise();
+        pb_trier_etat_sanitaire->raise();
+        pb_statistics->raise();
         tab_5 = new QWidget();
         tab_5->setObjectName(QStringLiteral("tab_5"));
         label_7 = new QLabel(tab_5);
@@ -410,10 +435,39 @@ public:
         lab_seins->raise();
         lab_malades->raise();
         textBrowser->raise();
+        tab_6 = new QWidget();
+        tab_6->setObjectName(QStringLiteral("tab_6"));
+        label_12 = new QLabel(tab_6);
+        label_12->setObjectName(QStringLiteral("label_12"));
+        label_12->setGeometry(QRect(-10, 0, 791, 531));
+        label_12->setPixmap(QPixmap(QString::fromUtf8("../../../Esprit/2A16/Semestre 1/Projet C++/ZOO'RNI/charte essai 1.png")));
+        label_12->setScaledContents(true);
+        horizontal_stat = new QFrame(tab_6);
+        horizontal_stat->setObjectName(QStringLiteral("horizontal_stat"));
+        horizontal_stat->setGeometry(QRect(70, 80, 641, 411));
+        horizontalLayout = new QHBoxLayout(horizontal_stat);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        Ajouter_animal->addTab(tab_6, QString());
+        tab_7 = new QWidget();
+        tab_7->setObjectName(QStringLiteral("tab_7"));
+        label_32 = new QLabel(tab_7);
+        label_32->setObjectName(QStringLiteral("label_32"));
+        label_32->setGeometry(QRect(-10, 0, 791, 531));
+        label_32->setPixmap(QPixmap(QString::fromUtf8("../../../Esprit/2A16/Semestre 1/Projet C++/ZOO'RNI/charte essai 1.png")));
+        label_32->setScaledContents(true);
+        horizontal_stat_etat = new QFrame(tab_7);
+        horizontal_stat_etat->setObjectName(QStringLiteral("horizontal_stat_etat"));
+        horizontal_stat_etat->setGeometry(QRect(60, 60, 671, 431));
+        horizontalLayout_3 = new QHBoxLayout(horizontal_stat_etat);
+        horizontalLayout_3->setSpacing(4);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_3->setContentsMargins(7, 7, 7, 2);
+        Ajouter_animal->addTab(tab_7, QString());
 
         retranslateUi(animaux);
 
-        Ajouter_animal->setCurrentIndex(0);
+        Ajouter_animal->setCurrentIndex(6);
+        anim_col->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(animaux);
@@ -422,7 +476,6 @@ public:
     void retranslateUi(QDialog *animaux)
     {
         animaux->setWindowTitle(QApplication::translate("animaux", "Dialog", Q_NULLPTR));
-        pbajouter->setText(QApplication::translate("animaux", "Ajouter ", Q_NULLPTR));
         pb_trier->setText(QApplication::translate("animaux", "Trier par ann\303\251e", Q_NULLPTR));
         pb_rechRef->setText(QApplication::translate("animaux", "Rechercher par reference", Q_NULLPTR));
         pb_trier_type->setText(QApplication::translate("animaux", "Trier par Type", Q_NULLPTR));
@@ -433,6 +486,19 @@ public:
         label_31->setText(QApplication::translate("animaux", "<html><head/><body><p align=\"center\"><span style=\" font-weight:600; color:#ffffff;\">Etat de cage</span></p></body></html>", Q_NULLPTR));
         pb_image->setText(QApplication::translate("animaux", "Joindre une photo", Q_NULLPTR));
         label_img->setText(QString());
+        le_recherche->setPlaceholderText(QApplication::translate("animaux", "recherche", Q_NULLPTR));
+        anim_col->clear();
+        anim_col->insertItems(0, QStringList()
+         << QApplication::translate("animaux", "All", Q_NULLPTR)
+         << QApplication::translate("animaux", "Reference", Q_NULLPTR)
+         << QApplication::translate("animaux", "Naissance", Q_NULLPTR)
+         << QApplication::translate("animaux", "Etat Sanitaire", Q_NULLPTR)
+         << QApplication::translate("animaux", "Type", Q_NULLPTR)
+         << QApplication::translate("animaux", "Etat Cage", Q_NULLPTR)
+        );
+        anim_col->setCurrentText(QApplication::translate("animaux", "All", Q_NULLPTR));
+        pb_trier_etat_sanitaire->setText(QApplication::translate("animaux", "Trier par Etat Sanitaire", Q_NULLPTR));
+        pb_statistics->setText(QApplication::translate("animaux", "Statistiques", Q_NULLPTR));
         Ajouter_animal->setTabText(Ajouter_animal->indexOf(tab_3), QApplication::translate("animaux", "Consulter les animaux", Q_NULLPTR));
         label_7->setText(QString());
         label_statistiqyes_3->setText(QApplication::translate("animaux", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600; text-decoration: underline; color:#ffde21;\">Modifier</span></p></body></html>", Q_NULLPTR));
@@ -477,6 +543,10 @@ public:
         label_26->setText(QApplication::translate("animaux", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">%</span></p></body></html>", Q_NULLPTR));
         lab_seins->setText(QApplication::translate("animaux", "<html><head/><body><p align=\"right\"><br/></p></body></html>", Q_NULLPTR));
         Ajouter_animal->setTabText(Ajouter_animal->indexOf(tab_2), QApplication::translate("animaux", "Statistiques", Q_NULLPTR));
+        label_12->setText(QString());
+        Ajouter_animal->setTabText(Ajouter_animal->indexOf(tab_6), QApplication::translate("animaux", "Statistiques 1", Q_NULLPTR));
+        label_32->setText(QString());
+        Ajouter_animal->setTabText(Ajouter_animal->indexOf(tab_7), QApplication::translate("animaux", "Statistique 2", Q_NULLPTR));
     } // retranslateUi
 
 };
