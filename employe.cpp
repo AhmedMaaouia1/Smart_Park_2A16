@@ -1,8 +1,17 @@
 
-#include "QSqlQuery"
-#include<QDebug>
-#include <QObject>
 #include "employe.h"
+#include "employee.h"
+#include "ui_employee.h"
+#include <QSqlQuery>
+#include <QtDebug>
+#include <QSqlQueryModel>
+#include <QObject>
+#include <QDialog>
+#include <QMessageBox>
+#include <QPaintEvent>
+#include <QPainter>
+#include <QWidget>
+#include <iostream>
 #include<QTableView>
 
 
@@ -115,3 +124,32 @@ QSqlQueryModel* employe::triNom()
           table->show();
 
       }
+ int employe::Stat_partie2()
+  {
+
+      int count=0 ;
+      QSqlQuery requete("select * from employe where age BETWEEN '18' AND '25'") ;
+      while(requete.next())
+      {
+              count++ ;
+      }
+
+  return count ;
+
+  }
+
+  int employe::Stat_partie3()
+  {
+      int count=0 ;
+      QSqlQuery requete("select * from employe where age BETWEEN '26' AND '60'") ;
+      while(requete.next())
+      {
+              count++ ;
+      }
+
+  return count ;
+
+  }
+
+
+

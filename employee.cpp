@@ -11,6 +11,22 @@
 #include "QVBoxLayout"
 #include "mainwindow.h"
 #include "widget.h"
+#include <QPaintEvent>
+#include <QPainter>
+#include <QWidget>
+#include <iostream>
+#include <QTextEdit>
+
+#include <QtCharts/QChartView>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+#include <QtCharts/QHorizontalStackedBarSeries>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QCategoryAxis>
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QPieSlice>
 
 employee::employee(QWidget *parent) :
     QDialog(parent),
@@ -152,5 +168,47 @@ void employee::on_rech_textChanged(const QString &arg1)
                 {
                    ui->tabemploye->setModel(E.afficher());
                 }
+
+}
+
+
+
+
+
+void employee::on_pb_statistics_clicked()
+{
+    double b=e.Stat_partie2(); // stat_partie2() pour determiner le nombre des animaux nés avant 2010
+    double c=e.Stat_partie3(); // stat_partie2() pour determiner le nombre des animaux nés apres 2010
+
+    double s2;
+    double s3;
+    if((b==0)&&(c==0))
+    {
+        s2=0;
+        s3=0;
+    }
+    else
+    {
+        s2= (b*100)/(b+c) ; // pourcentage des animaux nés avant 2010
+
+        s3=(c*100)/(b+c);   // pourcentage des animaux nés apres 2010
+
+    }
+
+
+
+    QPieSeries *series = new QPieSeries(); // La serie des elements qu'on va faire les stats
+    series->append("employe agé entre 18ans et 25ans ",s2); // pour ajouter une partie nommée "Animaux nés avant 2010" avec une pourcentage de s2
+    series->append("employe agé entre 26ans et 60ans",s3); // pour ajouter une partie nommée "Animaux nés apres 2010" avec une pourcentage de s3
+    QPieSlice *slice = series->slices().at(0);  // *slice pour faire des modifications au niveau du tranche "Animaux nés avant 2010"
+    slice->setLabelVisible(true);
+    slice->setPen(QPen(Qt::black,2)); // modifier le contour en couleur noir avec taille 2
+    slice->setBrush(Qt::red); // pour changer la couleur de la partie 0 qui est "Animaux nés avant 2010" en rouge
+    QChart *chart = new QChart(); // créer un graphique dynamiquement
+    chart->addSeries(series); // ajouter series créé récemment
+    chart->setTitle("Statistique des ages"); //ajouter un titre a notre graphique
+    QChartView *chartview = new QChartView(chart); // créer widget autonome pouvant afficher des graphiques
+    chartview->setParent(ui->horizontal_stat); // pour afficher les graphiques dans le label
+
 
 }

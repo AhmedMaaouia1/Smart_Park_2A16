@@ -35,7 +35,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="tab_2">
     <attribute name="title">
@@ -99,7 +99,7 @@
       <string>Rechercher</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pb_statistique">
+    <widget class="QPushButton" name="pb_statistics">
      <property name="geometry">
       <rect>
        <x>780</x>
@@ -389,8 +389,8 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
       <rect>
        <x>0</x>
        <y>3</y>
-       <width>941</width>
-       <height>481</height>
+       <width>981</width>
+       <height>571</height>
       </rect>
      </property>
      <property name="text">
@@ -406,8 +406,8 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
     <widget class="QLabel" name="label_15">
      <property name="geometry">
       <rect>
-       <x>370</x>
-       <y>100</y>
+       <x>400</x>
+       <y>30</y>
        <width>171</width>
        <height>51</height>
       </rect>
@@ -420,18 +420,16 @@ color: rgb(255, 255, 255);</string>
       <string>Statistique </string>
      </property>
     </widget>
-    <widget class="QMdiArea" name="mdiArea">
+    <widget class="QFrame" name="horizontal_stat">
      <property name="geometry">
       <rect>
-       <x>210</x>
-       <y>170</y>
-       <width>511</width>
-       <height>241</height>
+       <x>80</x>
+       <y>80</y>
+       <width>801</width>
+       <height>441</height>
       </rect>
      </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);</string>
-     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout"/>
     </widget>
    </widget>
   </widget>

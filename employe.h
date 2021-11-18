@@ -35,6 +35,8 @@ public:
     QSqlQueryModel * triNom();
      QSqlQueryModel * triAge();
  void rechercher(QTableView * tabl,QString,QString);
+ int Stat_partie2() ;
+ int Stat_partie3() ;
 
 private:
 QString nom,prenom,age,matricule,type,matricule_d;

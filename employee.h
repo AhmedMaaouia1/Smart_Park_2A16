@@ -3,7 +3,9 @@
 
 #include <QDialog>
 #include "employe.h"
-
+#include <QtCharts>
+#include <QChartView>
+#include <QPieSeries>
 namespace Ui {
 class employee;
 }
@@ -33,6 +35,10 @@ private slots:
 
 
     void on_rech_textChanged(const QString &arg1);
+
+    void on_statistics_clicked();
+
+    void on_pb_statistics_clicked();
 
 private:
     Ui::employee *ui;
