@@ -9,7 +9,12 @@
 namespace Ui {
 class employee;
 }
-
+class QCamera;
+class QCameraViewfinder;
+class QCameraImageCapture;
+class QVBoxLayout;
+class QMenu;
+class QAction;
 class employee : public QDialog
 {
     Q_OBJECT
@@ -36,13 +41,20 @@ private slots:
 
     void on_rech_textChanged(const QString &arg1);
 
-    void on_statistics_clicked();
 
     void on_pb_statistics_clicked();
 
 private:
     Ui::employee *ui;
     employe e;
+    QCamera *mCamera;
+        QCameraViewfinder *mCameraViewfinder;
+        QCameraImageCapture *mCameraImageCapture;
+        QVBoxLayout *mLayout;
+        QMenu *mOptionMenu;
+        QAction *mEncenderAction;
+        QAction *mApagarAction;
+        QAction *mCapturarAaction;
 };
 
 #endif // EMPLOYEE_H

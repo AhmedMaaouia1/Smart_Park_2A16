@@ -28,14 +28,14 @@
   <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>50</y>
+     <x>10</x>
+     <y>90</y>
      <width>981</width>
-     <height>601</height>
+     <height>701</height>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab_2">
     <attribute name="title">
@@ -47,7 +47,7 @@
        <x>-130</x>
        <y>-30</y>
        <width>1101</width>
-       <height>611</height>
+       <height>701</height>
       </rect>
      </property>
      <property name="text">
@@ -63,8 +63,8 @@
     <widget class="QPushButton" name="pb_supprimer">
      <property name="geometry">
       <rect>
-       <x>560</x>
-       <y>410</y>
+       <x>290</x>
+       <y>300</y>
        <width>75</width>
        <height>23</height>
       </rect>
@@ -76,8 +76,8 @@
     <widget class="QPushButton" name="pb_modifier">
      <property name="geometry">
       <rect>
-       <x>480</x>
-       <y>410</y>
+       <x>370</x>
+       <y>300</y>
        <width>75</width>
        <height>23</height>
       </rect>
@@ -89,7 +89,7 @@
     <widget class="QPushButton" name="pb_rechercher">
      <property name="geometry">
       <rect>
-       <x>400</x>
+       <x>510</x>
        <y>90</y>
        <width>75</width>
        <height>23</height>
@@ -102,7 +102,7 @@
     <widget class="QPushButton" name="pb_statistics">
      <property name="geometry">
       <rect>
-       <x>780</x>
+       <x>870</x>
        <y>90</y>
        <width>81</width>
        <height>23</height>
@@ -128,7 +128,7 @@
     <widget class="QPushButton" name="le_tri_nom">
      <property name="geometry">
       <rect>
-       <x>600</x>
+       <x>710</x>
        <y>90</y>
        <width>75</width>
        <height>23</height>
@@ -138,26 +138,13 @@
       <string>Tri nom</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_7">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>390</y>
-       <width>75</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Camera</string>
-     </property>
-    </widget>
     <widget class="QScrollArea" name="scrollArea">
      <property name="geometry">
       <rect>
-       <x>370</x>
+       <x>490</x>
        <y>130</y>
-       <width>491</width>
-       <height>251</height>
+       <width>471</width>
+       <height>331</height>
       </rect>
      </property>
      <property name="widgetResizable">
@@ -168,8 +155,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>489</width>
-        <height>249</height>
+        <width>469</width>
+        <height>329</height>
        </rect>
       </property>
       <widget class="QTableView" name="tabemploye">
@@ -177,8 +164,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>491</width>
-         <height>251</height>
+         <width>471</width>
+         <height>331</height>
         </rect>
        </property>
       </widget>
@@ -322,8 +309,8 @@ color: rgb(255, 255, 255);</string>
     <widget class="QComboBox" name="comboBox">
      <property name="geometry">
       <rect>
-       <x>370</x>
-       <y>410</y>
+       <x>380</x>
+       <y>340</y>
        <width>101</width>
        <height>22</height>
       </rect>
@@ -359,7 +346,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
     <widget class="QLineEdit" name="rech">
      <property name="geometry">
       <rect>
-       <x>480</x>
+       <x>590</x>
        <y>90</y>
        <width>113</width>
        <height>20</height>
@@ -369,7 +356,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
     <widget class="QPushButton" name="le_tri_age">
      <property name="geometry">
       <rect>
-       <x>680</x>
+       <x>790</x>
        <y>90</y>
        <width>75</width>
        <height>23</height>
@@ -377,6 +364,42 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
      </property>
      <property name="text">
       <string>Tri age</string>
+     </property>
+    </widget>
+    <widget class="QScrollArea" name="scrollArea_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>340</y>
+       <width>361</width>
+       <height>301</height>
+      </rect>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>359</width>
+        <height>299</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="optionspush">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>310</y>
+       <width>131</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>options</string>
      </property>
     </widget>
    </widget>
@@ -423,7 +446,7 @@ color: rgb(255, 255, 255);</string>
     <widget class="QFrame" name="horizontal_stat">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>100</x>
        <y>80</y>
        <width>801</width>
        <height>441</height>

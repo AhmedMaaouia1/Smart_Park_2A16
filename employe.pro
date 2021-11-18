@@ -37,8 +37,7 @@ HEADERS += \
 
 FORMS += \
     employee.ui \
-    mainwindow.ui \
-    widget.ui
+    mainwindow.ui
 QMAKE_CXXFLAGS += -std=gnu++14
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

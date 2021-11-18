@@ -5,17 +5,21 @@
 #include "QSqlQuery"
 #include "QStringListModel"
 #include <QMessageBox>
-#include "QCamera"
-#include "QCameraImageCapture"
-#include "QCameraViewfinder"
-#include "QVBoxLayout"
 #include "mainwindow.h"
-#include "widget.h"
 #include <QPaintEvent>
 #include <QPainter>
 #include <QWidget>
 #include <iostream>
 #include <QTextEdit>
+
+#include "QCamera"
+#include "QCameraViewfinder"
+#include "QCameraImageCapture"
+#include "QVBoxLayout"
+#include "QMenu"
+#include "QAction"
+#include <QFileDialog>
+#include <QFile>
 
 #include <QtCharts/QChartView>
 #include <QtCharts/QBarSeries>
@@ -33,10 +37,44 @@ employee::employee(QWidget *parent) :
     ui(new Ui::employee)
 {
     ui->setupUi(this);
+    mCamera =new QCamera(this);
+        mCameraViewfinder =new QCameraViewfinder(this);
+        mCameraImageCapture =new QCameraImageCapture(mCamera,this);
+        mLayout =new QVBoxLayout;
+        mOptionMenu =new QMenu("Options", this);
+        mEncenderAction =new QAction("ouvrire",this);
+        mApagarAction =new QAction ("figer", this);
+
+        mCapturarAaction =new QAction("capture", this);
+
+
+        mOptionMenu->addActions({mEncenderAction ,mApagarAction,mCapturarAaction});
+        ui->optionspush->setMenu(mOptionMenu);
+        mCamera->setViewfinder(mCameraViewfinder);
+
+
+        mLayout->addWidget(mCameraViewfinder);
+        mLayout->setMargin(0);
+        ui->scrollArea_2->setLayout(mLayout);
+
+        connect(mEncenderAction, &QAction::triggered ,[&]() {mCamera->start();});
+        connect(mApagarAction, &QAction::triggered ,[&]() {mCamera->stop();});
+        connect(mCapturarAaction, &QAction::triggered ,[&]() {
+           auto filename= QFileDialog ::getSaveFileName(this,"capturar","/","Imagen(*.jpg;*jpeg)");
+            if (filename.isEmpty()){return; }
+            mCameraImageCapture->setCaptureDestination(QCameraImageCapture::CaptureToFile);
+
+        QImageEncoderSettings ImageEncoderSettings; ImageEncoderSettings.setCodec("image/jpeg");
+        ImageEncoderSettings.setResolution(1600,1200);
+        mCameraImageCapture->setEncodingSettings(ImageEncoderSettings);
+        mCamera->setCaptureMode(QCamera::CaptureStillImage);
+        mCamera->start();
+        mCamera->searchAndLock();
+        mCameraImageCapture->capture(filename);
+        mCamera->unlock();});
 
 
 }
-
 employee::~employee()
 {
     delete ui;
