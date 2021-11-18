@@ -1,14 +1,17 @@
-#ifndef PRODUITS_H
-#define PRODUITS_H
+#ifndef PRODUITZOO_H
+#define PRODUITZOO_H
 //#include"mainwindow.h"
 #include<QString>
 #include <QSqlQueryModel>
 #include <QTableView>
-class Produits
+#include <QObject>
+#include <QWidget>
+
+class produitzoo
 {
 public:
-    Produits();
-    Produits(QString,QString,QString,QString,int);
+    produitzoo();
+    produitzoo(QString,QString,QString,QString,int);
     QString getid();
     QString getnom();
     int getcible();
@@ -30,6 +33,9 @@ public:
     QSqlQueryModel* tricategory();
     void recherche(QTableView * tabl, QString,QString,QString);
     int calculerprix();
+    int Stat_partie2();
+    int Stat_partie3();
+
 
 private:
     QString id;
@@ -40,4 +46,5 @@ private:
     int prix;
 
 };
-#endif // PRODUITS_H
+
+#endif // PRODUITZOO_H

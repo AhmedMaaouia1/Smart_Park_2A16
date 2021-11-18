@@ -1,34 +1,38 @@
-#include "produits.h"
-#include "QSqlQuery"
-#include<QDebug>
+#include "produitzoo.h"
+#include "ui_mainwindow.h"
+#include <QSqlQuery>
+#include <QDebug>
 #include <QObject>
-#include<QString>
-//#include"mainwindow.h"
-Produits::Produits()
+#include <QString>
+#include <iostream>
+
+using namespace std;
+
+produitzoo::produitzoo()
 {
 id=" "; nom=" "; cible=0; category=" " ; type=" ";
 }
 
-Produits::Produits(QString id,QString nom,QString type,QString category,int prix)
+produitzoo::produitzoo(QString id,QString nom,QString type,QString category,int prix)
 {
     this->id=id ; this->category=category;this->type=type; this-> nom=nom ;this-> prix=prix;
 }
 
 
 
-QString Produits::getid(){return id;}
-int Produits::getcible(){return cible;}
-QString Produits::getnom(){return nom;}
-QString Produits::getcategory(){return category;}
-QString Produits::gettype(){return type;}
-int Produits::getprix(){return prix;}
-void Produits::setid(int id){this->id=id;}
-void Produits::setnom(QString nom){this->nom=nom;}
-void Produits::setcible(int cible){this->cible=cible;}
-void Produits::setcategory(QString category){this->category=category;}
-void Produits::settype(QString type){this->type=type;}
-void Produits::setprix(int prix){this->prix=prix;}
-bool Produits::ajouter(){
+QString produitzoo::getid(){return id;}
+int produitzoo::getcible(){return cible;}
+QString produitzoo::getnom(){return nom;}
+QString produitzoo::getcategory(){return category;}
+QString produitzoo::gettype(){return type;}
+int produitzoo::getprix(){return prix;}
+void produitzoo::setid(int id){this->id=id;}
+void produitzoo::setnom(QString nom){this->nom=nom;}
+void produitzoo::setcible(int cible){this->cible=cible;}
+void produitzoo::setcategory(QString category){this->category=category;}
+void produitzoo::settype(QString type){this->type=type;}
+void produitzoo::setprix(int prix){this->prix=prix;}
+bool produitzoo::ajouter(){
 
 
     QSqlQuery query;
@@ -42,7 +46,7 @@ bool Produits::ajouter(){
                         query.bindValue(4, prix_string);
               return  query.exec();
 }
-QSqlQueryModel* Produits::afficher(){
+QSqlQueryModel* produitzoo::afficher(){
 
     QSqlQueryModel *model = new QSqlQueryModel();
           model->setQuery("SELECT* FROM PRODUIT");
@@ -54,7 +58,7 @@ QSqlQueryModel* Produits::afficher(){
 
     return model;
 }
-bool Produits ::supprimer(QString id){
+bool produitzoo::supprimer(QString id){
 
     QSqlQuery query;
 
@@ -66,7 +70,7 @@ bool Produits ::supprimer(QString id){
 
 }
 
-bool Produits ::modifier(QString id,QString nom,QString category,QString type,int prix)
+bool produitzoo::modifier(QString id,QString nom,QString category,QString type,int prix)
 {
     QSqlQuery query;
          QString prix_string= QString::number(prix);
@@ -82,7 +86,7 @@ bool Produits ::modifier(QString id,QString nom,QString category,QString type,in
 }
 
 
-QSqlQueryModel * Produits::trinom()
+QSqlQueryModel * produitzoo::trinom()
 {
     QSqlQueryModel * model=new QSqlQueryModel();
     model->setQuery("SELECT * FROM PRODUIT ORDER BY NOM");
@@ -94,7 +98,7 @@ QSqlQueryModel * Produits::trinom()
 
     return model;
 }
-QSqlQueryModel * Produits::tritype()
+QSqlQueryModel * produitzoo::tritype()
 {
     QSqlQueryModel * model=new QSqlQueryModel();
     model->setQuery("SELECT * FROM  PRODUIT ORDER BY TYPE");
@@ -106,7 +110,7 @@ QSqlQueryModel * Produits::tritype()
 
     return model;
 }
-QSqlQueryModel * Produits::tricategory()
+QSqlQueryModel * produitzoo::tricategory()
 {
     QSqlQueryModel * model=new QSqlQueryModel();
     model->setQuery("SELECT * FROM PRODUIT ORDER BY CATEGORY");
@@ -118,7 +122,7 @@ QSqlQueryModel * Produits::tricategory()
 
     return model;
 }
-void Produits :: recherche(QTableView * table ,QString nom, QString category,QString type )
+void produitzoo :: recherche(QTableView * table ,QString nom, QString category,QString type )
 {
     QSqlQueryModel *model= new QSqlQueryModel();
 
@@ -132,14 +136,40 @@ void Produits :: recherche(QTableView * table ,QString nom, QString category,QSt
     table->show();
 }
 
-int Produits::calculerprix(){
+int produitzoo::calculerprix(){
 
     int count=0 ;
-   QSqlQuery requete("select * from PRODUIT where PRIX ") ;
+   QSqlQuery requete("select * from PRODUIT where PRIX > 0 ") ;
           while(requete.next())
                             {
                                     count+=requete.value(4).toInt() ;
+                                     cout<<"revenue="<<count<<endl;
                             }
 
                         return count ;}
+int produitzoo::Stat_partie2()
+{
 
+    int count=0 ;
+    QSqlQuery requete("select * from CLIENT where age BETWEEN '0' AND '20'") ;
+    while(requete.next())
+    {
+            count++ ;
+    }
+
+return count ;
+
+}
+
+int produitzoo::Stat_partie3()
+{
+    int count=0 ;
+    QSqlQuery requete("select * from CLIENT where age BETWEEN '20' AND '90'") ;
+    while(requete.next())
+    {
+            count++ ;
+    }
+
+return count ;
+
+}

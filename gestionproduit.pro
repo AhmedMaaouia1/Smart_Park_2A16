@@ -1,8 +1,10 @@
-QT       += core gui
-QT       +=sql
+QT  +=core gui sql core network
+QT+= sql
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
+
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
@@ -19,12 +21,12 @@ SOURCES += \
     connection.cpp \
     main.cpp \
     mainwindow.cpp \
-    produits.cpp
+    produitzoo.cpp
 
 HEADERS += \
     connetion.h \
     mainwindow.h \
-    produits.h
+    produitzoo.h
 
 FORMS += \
     mainwindow.ui
@@ -33,3 +35,7 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    rec.qrc
+
