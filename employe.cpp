@@ -3,6 +3,7 @@
 #include<QDebug>
 #include <QObject>
 #include "employe.h"
+#include<QTableView>
 
 
 employe::employe()
@@ -66,13 +67,10 @@ bool employe::supprimer(QString matricule){
       QSqlQuery query;
 
 
-
-
     query.prepare("Delete from EMPLOYE where matricule=:matricule");
     query.bindValue(":matricule", matricule);
 
     return  query.exec();
-
 
 
 }
@@ -89,3 +87,31 @@ bool employe::modifier(QString matricule, QString type, QString nom, QString pre
 
        return query.exec();
 }
+QSqlQueryModel* employe::triNom()
+ {
+     QSqlQueryModel * model= new QSqlQueryModel();
+            model->setQuery("SELECT * FROM employe ORDER BY NOM");
+            return model;
+ }
+ QSqlQueryModel* employe::triAge()
+ {
+     QSqlQueryModel * model= new QSqlQueryModel();
+            model->setQuery("SELECT * FROM employe ORDER BY AGE");
+            return model;
+ }
+ void employe :: rechercher(QTableView * table ,QString Age ,QString Matricule)
+      {
+          QSqlQueryModel *model= new QSqlQueryModel();
+
+          QSqlQuery *query=new QSqlQuery;
+
+
+          query->prepare("select * FROM employe where Age like '%"+Age+"%' or MATRICULE like '%"+Matricule+"%' ;");
+
+
+          query->exec();
+          model->setQuery(*query);
+          table->setModel(model);
+          table->show();
+
+      }

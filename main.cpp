@@ -4,9 +4,12 @@
 #include "connection.h"
 #include "employe.h"
 #include"employee.h"
+#include "widget.h"
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    a.setStyle("fusion");
 
     Connection c;
     MainWindow w;

@@ -6,6 +6,7 @@
 #include <QObject>
 #include "QSqlQuery"
 #include "QSqlQueryModel"
+#include <QTableView>
 
 
 class employe
@@ -31,8 +32,9 @@ public:
     QSqlQueryModel* afficher();
     bool supprimer(QString);
     bool modifier(QString,QString,QString,QString,QString,QString);
-
-
+    QSqlQueryModel * triNom();
+     QSqlQueryModel * triAge();
+ void rechercher(QTableView * tabl,QString,QString);
 
 private:
 QString nom,prenom,age,matricule,type,matricule_d;

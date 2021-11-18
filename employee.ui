@@ -30,8 +30,8 @@
     <rect>
      <x>20</x>
      <y>50</y>
-     <width>941</width>
-     <height>511</height>
+     <width>981</width>
+     <height>601</height>
     </rect>
    </property>
    <property name="currentIndex">
@@ -46,8 +46,8 @@
       <rect>
        <x>-130</x>
        <y>-30</y>
-       <width>941</width>
-       <height>481</height>
+       <width>1101</width>
+       <height>611</height>
       </rect>
      </property>
      <property name="text">
@@ -86,11 +86,11 @@
       <string>Modifier</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="pb_rechercher">
      <property name="geometry">
       <rect>
-       <x>410</x>
-       <y>90</y>
+       <x>360</x>
+       <y>50</y>
        <width>75</width>
        <height>23</height>
       </rect>
@@ -99,11 +99,11 @@
       <string>Rechercher</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="pb_statistique">
      <property name="geometry">
       <rect>
-       <x>690</x>
-       <y>410</y>
+       <x>780</x>
+       <y>90</y>
        <width>81</width>
        <height>23</height>
       </rect>
@@ -125,24 +125,24 @@
       <string>Ajouter</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_6">
+    <widget class="QPushButton" name="le_tri_nom">
      <property name="geometry">
       <rect>
-       <x>610</x>
-       <y>90</y>
+       <x>600</x>
+       <y>50</y>
        <width>75</width>
        <height>23</height>
       </rect>
      </property>
      <property name="text">
-      <string>Trier</string>
+      <string>Trier par Nom</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_7">
      <property name="geometry">
       <rect>
-       <x>690</x>
-       <y>90</y>
+       <x>10</x>
+       <y>390</y>
        <width>75</width>
        <height>23</height>
       </rect>
@@ -156,7 +156,7 @@
       <rect>
        <x>370</x>
        <y>130</y>
-       <width>401</width>
+       <width>491</width>
        <height>251</height>
       </rect>
      </property>
@@ -168,7 +168,7 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>399</width>
+        <width>489</width>
         <height>249</height>
        </rect>
       </property>
@@ -177,7 +177,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>401</width>
+         <width>491</width>
          <height>251</height>
         </rect>
        </property>
@@ -319,16 +319,6 @@ color: rgb(255, 255, 255);</string>
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_8">
-     <property name="geometry">
-      <rect>
-       <x>490</x>
-       <y>90</y>
-       <width>113</width>
-       <height>20</height>
-      </rect>
-     </property>
-    </widget>
     <widget class="QComboBox" name="comboBox">
      <property name="geometry">
       <rect>
@@ -363,6 +353,39 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
        <y>270</y>
        <width>113</width>
        <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox_tri">
+     <property name="geometry">
+      <rect>
+       <x>790</x>
+       <y>40</y>
+       <width>101</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="le_tri_age">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>90</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Trier par Age</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="rech">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>90</y>
+       <width>201</width>
+       <height>31</height>
       </rect>
      </property>
     </widget>

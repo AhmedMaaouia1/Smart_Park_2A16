@@ -23,6 +23,7 @@ employee::~employee()
 
 
 
+
 void employee::on_pb_ajouter_clicked()
 {QString matricul=ui->le_matricule->text();
     QString type=ui->le_type->text();
@@ -114,3 +115,36 @@ void employee::on_comboBox_activated(const QString &arg1)
    }
 
 
+
+
+
+
+
+void employee::on_le_tri_nom_clicked()
+{
+     ui->tabemploye->setModel(e.triNom());
+}
+
+void employee::on_le_tri_age_clicked()
+{
+    ui->tabemploye->setModel(e.triAge());
+}
+
+
+
+void employee::on_rech_textChanged(const QString &arg1)
+{
+
+        employe E;
+
+
+             QString Age = ui->rech->text();
+             QString Matricule = ui->rech->text();
+
+                E.rechercher(ui->tabemploye,Age,Matricule);
+                if (ui->rech->text().isEmpty())
+                {
+                   ui->tabemploye->setModel(E.afficher());
+                }
+
+}

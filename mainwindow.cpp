@@ -35,6 +35,18 @@ void MainWindow::on_login_clicked()
             Employee = new employee(this);
             Employee->show();
         }
+        else if(username ==  "test1" && password == "test1") {
+            QMessageBox::information(this, "Login", "Username and password is correct");
+            //hide();
+            Employee = new employee(this);
+            Employee->show();
+        }
+        else if(username ==  "test2" && password == "test2") {
+            QMessageBox::information(this, "Login", "Username and password is correct");
+            //hide();
+            Employee = new employee(this);
+            Employee->show();
+        }
         else {
             QMessageBox::warning(this,"Login", "Username and password is not correct");
         }

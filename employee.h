@@ -25,6 +25,15 @@ private slots:
 
     void on_comboBox_activated(const QString &arg1);
 
+
+
+    void on_le_tri_nom_clicked();
+
+    void on_le_tri_age_clicked();
+
+
+    void on_rech_textChanged(const QString &arg1);
+
 private:
     Ui::employee *ui;
     employe e;
