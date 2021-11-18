@@ -22,17 +22,20 @@ SOURCES += \
     employe.cpp \
     employee.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    widget.cpp
 
 HEADERS += \
     connection.h \
     employe.h \
     employee.h \
-    mainwindow.h
+    mainwindow.h \
+    widget.h
 
 FORMS += \
     employee.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    widget.ui
 QMAKE_CXXFLAGS += -std=gnu++14
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

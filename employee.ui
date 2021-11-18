@@ -89,8 +89,8 @@
     <widget class="QPushButton" name="pb_rechercher">
      <property name="geometry">
       <rect>
-       <x>360</x>
-       <y>50</y>
+       <x>400</x>
+       <y>90</y>
        <width>75</width>
        <height>23</height>
       </rect>
@@ -125,11 +125,11 @@
       <string>Ajouter</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="le_tri_nom">
+    <widget class="QPushButton" name="pb_trier">
      <property name="geometry">
       <rect>
        <x>600</x>
-       <y>50</y>
+       <y>10</y>
        <width>75</width>
        <height>23</height>
       </rect>
@@ -366,26 +366,13 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
       </rect>
      </property>
     </widget>
-    <widget class="QPushButton" name="le_tri_age">
+    <widget class="QComboBox" name="comboBox_rech">
      <property name="geometry">
       <rect>
-       <x>600</x>
+       <x>480</x>
        <y>90</y>
-       <width>75</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Trier par Age</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="rech">
-     <property name="geometry">
-      <rect>
-       <x>350</x>
-       <y>90</y>
-       <width>201</width>
-       <height>31</height>
+       <width>101</width>
+       <height>22</height>
       </rect>
      </property>
     </widget>
