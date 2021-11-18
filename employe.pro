@@ -22,15 +22,13 @@ SOURCES += \
     employe.cpp \
     employee.cpp \
     main.cpp \
-    mainwindow.cpp \
-    widget.cpp
+    mainwindow.cpp
 
 HEADERS += \
     connection.h \
     employe.h \
     employee.h \
-    mainwindow.h \
-    widget.h
+    mainwindow.h
 
 FORMS += \
     employee.ui \

@@ -5,13 +5,19 @@
 #include "QSqlQuery"
 #include "QStringListModel"
 #include <QMessageBox>
+#include "QCamera"
+#include "QCameraImageCapture"
+#include "QCameraViewfinder"
+#include "QVBoxLayout"
 #include "mainwindow.h"
+#include "widget.h"
 
 employee::employee(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::employee)
 {
     ui->setupUi(this);
+
 
 }
 

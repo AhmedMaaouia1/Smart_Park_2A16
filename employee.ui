@@ -125,17 +125,17 @@
       <string>Ajouter</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pb_trier">
+    <widget class="QPushButton" name="le_tri_nom">
      <property name="geometry">
       <rect>
        <x>600</x>
-       <y>10</y>
+       <y>90</y>
        <width>75</width>
        <height>23</height>
       </rect>
      </property>
      <property name="text">
-      <string>Trier par Nom</string>
+      <string>Tri nom</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_7">
@@ -356,24 +356,27 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
       </rect>
      </property>
     </widget>
-    <widget class="QComboBox" name="comboBox_tri">
-     <property name="geometry">
-      <rect>
-       <x>790</x>
-       <y>40</y>
-       <width>101</width>
-       <height>22</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QComboBox" name="comboBox_rech">
+    <widget class="QLineEdit" name="rech">
      <property name="geometry">
       <rect>
        <x>480</x>
        <y>90</y>
-       <width>101</width>
-       <height>22</height>
+       <width>113</width>
+       <height>20</height>
       </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="le_tri_age">
+     <property name="geometry">
+      <rect>
+       <x>680</x>
+       <y>90</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Tri age</string>
      </property>
     </widget>
    </widget>
