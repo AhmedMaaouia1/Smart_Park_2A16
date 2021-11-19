@@ -75,7 +75,7 @@ QSqlQueryModel* animal::afficher()
 QSqlQueryModel* animal::trieranimaux()
 {
     QSqlQueryModel* model=new QSqlQueryModel();
-         model->setQuery("SELECT* FROM ANIMAUX ORDER BY NAISSANCE DESC");
+         model->setQuery("SELECT* FROM ANIMAUX ORDER BY NAISSANCE DESC"); // descendant
          model->setHeaderData(0, Qt::Horizontal, QObject::tr("Reference"));
          model->setHeaderData(1, Qt::Horizontal, QObject::tr("Date naissance"));
          model->setHeaderData(2, Qt::Horizontal, QObject::tr("Etat Sanitaire"));
@@ -182,6 +182,7 @@ int animal::Stat_partie5()
 return count ;
 }
 
+ //recherche statique
 /*QSqlQueryModel* animal::rechercheRef()
 {
 

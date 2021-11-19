@@ -43,7 +43,7 @@ private slots:
 
     void on_pb_trier_type_clicked();
 
-    void on_pb_rechRef_clicked();
+    //void on_pb_rechRef_clicked(); recherche statique
 
     void on_pb_image_clicked();
 
@@ -56,10 +56,12 @@ private slots:
 
     void on_pb_statistics_clicked();
 
+    void showTime();
+
 private:
     Ui::animaux *ui;
     animal a;
-    int sel_col_anim=-1;
+    int col_anim=-1;
 };
 
 #endif // ANIMAUX_H

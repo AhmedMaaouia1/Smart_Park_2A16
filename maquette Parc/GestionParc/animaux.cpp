@@ -24,6 +24,9 @@
 #include <QtCharts/QPieSeries>
 #include <QtCharts/QPieSlice>
 
+#include <QTimer>
+#include <QDateTime>
+
 using namespace std;
 
 animaux::animaux(QWidget *parent) :
@@ -37,6 +40,13 @@ animaux::animaux(QWidget *parent) :
     show_anim();
     on_pb_statistics_clicked();
 
+    QTimer *timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()),this,SLOT(showTime()));
+    timer->start();
+
+    QDateTime dateTime = QDateTime::currentDateTime();
+    QString datetimetext = dateTime.toString();
+    ui->DateTime->setText(datetimetext);
 }
 
 animaux::~animaux()
@@ -228,7 +238,8 @@ void animaux::on_pb_trier_etat_sanitaire_clicked()
     ui->tab_animaux->setModel(a.trieranimauxEtatSanitaire());
 }
 
-void animaux::on_pb_rechRef_clicked()
+//RECHERCHE STATIQUE
+/*void animaux::on_pb_rechRef_clicked()
 {
     //int ref=ui->le_rechRef->text().toInt();
     //ui->tab_animaux_2->setModel(a.rechercheRef(ref));
@@ -253,20 +264,21 @@ void animaux::on_pb_rechRef_clicked()
                                    QMessageBox::Cancel);
     }
 
-}
+}*/
 
 //affichage
 void animaux::show_anim()
 {
     //creation model (masque du tableau) : permet recherche et tri
-        proxy_anim = new QSortFilterProxyModel();
+        proxy_anim = new QSortFilterProxyModel(); //faire la recherche et tri du string deja pris dans les fonctions (une fixe la colonne ou on cherche et la 2eme fixe le string a chercher)
+    //QSortFilterProxyModel :class provides support for sorting and filtering data passed between another model and a view
 
      //definir la source (tableau original)
-        proxy_anim->setSourceModel(a.afficher());
+        proxy_anim->setSourceModel(a.afficher()); // Sets the given sourceModel to be processed by the proxy model(proxy_anim)
 
      //pour la recherche
         proxy_anim->setFilterCaseSensitivity(Qt::CaseInsensitive); // S=s (pas de difference entre majuscule et miniscule)
-       //remplissage tableau avec le masque
+     //remplissage tableau avec le masque
         ui->tab_animaux->setModel(proxy_anim);
 }
 
@@ -274,13 +286,17 @@ void animaux::show_anim()
 
 void animaux::on_le_recherche_textChanged(const QString &arg1)
 {
-    proxy_anim->setFilterFixedString(arg1);
+    proxy_anim->setFilterFixedString(arg1); //Sets the fixed string used to filter the contents of the source model to the given pattern.
+
 }
 
 void animaux::on_anim_col_currentIndexChanged(int index)
 {
-    sel_col_anim=ui->anim_col->currentIndex()-1;
-    proxy_anim->setFilterKeyColumn(sel_col_anim);
+    col_anim=ui->anim_col->currentIndex()-1; //The current index is -1 if there is no current widget.
+                                             // le tableau commence a partir de 0 or pour afficher tous les colonnes on a besoin de -1
+    proxy_anim->setFilterKeyColumn(col_anim);
+   //This property holds the column where the key used to filter the contents of the source model is read from.
+    //The default value is 0. If the value is -1, the keys will be read from all columns.
 }
 
 
@@ -320,13 +336,13 @@ void animaux::on_pb_image_clicked()
 
 void animaux::on_pb_statistics_clicked()
 {
-    double b=a.Stat_partie2();
+    double b=a.Stat_partie2(); // stat_partie2() pour determiner le nombre des animaux nés avant 2010
     //cout<<b<<endl ;
-    double c=a.Stat_partie3();
+    double c=a.Stat_partie3(); // stat_partie2() pour determiner le nombre des animaux nés apres 2010
     //cout<<c<<endl ;
-    double d=a.Stat_partie4();
+    double d=a.Stat_partie4(); // stat_partie3() pour determiner le nombre des animaux malade
     //cout<<d<<endl ;
-    double m=a.Stat_partie5();
+    double m=a.Stat_partie5();  // stat_partie3() pour determiner le nombre des animaux sein
     //cout<<m<<endl ;
 
     double s2;
@@ -338,9 +354,9 @@ void animaux::on_pb_statistics_clicked()
     }
     else
     {
-        s2= (b*100)/(b+c) ;
+        s2= (b*100)/(b+c) ; // pourcentage des animaux nés avant 2010
         //cout<<"s2:"<<s2<<endl;
-        s3=(c*100)/(b+c);
+        s3=(c*100)/(b+c);   // pourcentage des animaux nés apres 2010
         //cout<<"s3:"<<s3<<endl;
     }
 
@@ -353,26 +369,26 @@ void animaux::on_pb_statistics_clicked()
     }
     else
     {
-        s4=(d*100)/(d+m);
+        s4=(d*100)/(d+m); // pourcentage des animaux malades
         //cout<<"s4:"<<s4<<endl;
-        s5=(m*100)/(d+m);
+        s5=(m*100)/(d+m);  // pourcentage des animaux seins
         //cout<<"s5:"<<s5<<endl;
     }
 
 
-    QPieSeries *series = new QPieSeries();
-    series->append("Animaux nés avant 2010",s2);
-    series->append("Animaux nés apres 2010",s3);
-    QPieSlice *slice = series->slices().at(0);
-    //slice->setExploded(true);//tba3ed el partie
+    QPieSeries *series = new QPieSeries(); // La serie des elements qu'on va faire les stats
+    series->append("Animaux nés avant 2010",s2); // pour ajouter une partie nommée "Animaux nés avant 2010" avec une pourcentage de s2
+    series->append("Animaux nés apres 2010",s3); // pour ajouter une partie nommée "Animaux nés apres 2010" avec une pourcentage de s3
+    QPieSlice *slice = series->slices().at(0);  // *slice pour faire des modifications au niveau du tranche "Animaux nés avant 2010"
+    //slice->setExploded(true); //tba3ed el partie
     slice->setLabelVisible(true);
-    slice->setPen(QPen(Qt::black,1));
-    slice->setBrush(Qt::red);
-    QChart *chart = new QChart();
-    chart->addSeries(series);
-    chart->setTitle("Statistique des annees");
-    QChartView *chartview = new QChartView(chart);
-    chartview->setParent(ui->horizontal_stat);
+    slice->setPen(QPen(Qt::black,2)); // modifier le contour en couleur noir avec taille 2
+    slice->setBrush(Qt::red); // pour changer la couleur de la partie 0 qui est "Animaux nés avant 2010" en rouge
+    QChart *chart = new QChart(); // créer un graphique dynamiquement
+    chart->addSeries(series); // ajouter series créé récemment
+    chart->setTitle("Statistique des annees"); //ajouter un titre a notre graphique
+    QChartView *chartview = new QChartView(chart); // créer widget autonome pouvant afficher des graphiques
+    chartview->setParent(ui->horizontal_stat); // pour afficher les graphiques dans le label
 
 
 
@@ -389,4 +405,19 @@ void animaux::on_pb_statistics_clicked()
     chart1->setTitle("Statistics de l'etat sanitaire");
     QChartView *chartview1 = new QChartView(chart1);
     chartview1->setParent(ui->horizontal_stat_etat);
+}
+
+void animaux::showTime()
+{
+    QTime time=QTime::currentTime();
+
+    QString time_text=time.toString("hh : mm : ss");//hour-second-minutes
+
+    if ((time.second()%2)==0)
+    {
+        time_text[3] = ' ';
+        time_text[8] = ' ';
+    }
+
+    ui->Digital_clock->setText(time_text);
 }

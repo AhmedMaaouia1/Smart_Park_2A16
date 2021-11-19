@@ -36,5 +36,5 @@ void MainWindow::on_pb_gererAn_clicked()
 void MainWindow::on_pb_pageFB_clicked()
 {
     QString link="https://www.familiscope.fr/dossiers/les-20-plus-beaux-parcs-animaliers-reserves-et-zoos-de-france/";
-    QDesktopServices::openUrl(QUrl(link));
+    QDesktopServices::openUrl(QUrl(link)); //pour chercher et ouvrir l'adresse
 }

@@ -2391,7 +2391,9 @@ release/animaux.o: ../GestionParc/animaux.cpp ../GestionParc/animaux.h \
 		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QBarCategoryAxis \
 		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QHorizontalStackedBarSeries \
 		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QLineSeries \
-		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QCategoryAxis
+		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QCategoryAxis \
+		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QTimer \
+		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QDateTime
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\animaux.o ..\GestionParc\animaux.cpp
 
 release/connexion.o: ../GestionParc/connexion.cpp ../GestionParc/connexion.h \

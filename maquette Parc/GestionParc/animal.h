@@ -33,7 +33,7 @@ public:
         QSqlQueryModel* afficher();
         bool supprimer(int ref);
         bool modifier(int,int,QString,QString,QString);
-        //Métiers:(STAT/TRIE/RECHERCHE)
+        //Métiers:(STAT/TRIE)
         int Stat_partie2() ;
         int Stat_partie3() ;
         int Stat_partie4() ;

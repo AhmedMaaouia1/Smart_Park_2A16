@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_animaux_t {
     QByteArrayData data[19];
-    char stringdata0[398];
+    char stringdata0[385];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -43,13 +43,13 @@ QT_MOC_LITERAL(8, 143, 18), // "on_pb_stat_clicked"
 QT_MOC_LITERAL(9, 162, 22), // "on_pb_upload_2_clicked"
 QT_MOC_LITERAL(10, 185, 19), // "on_pb_trier_clicked"
 QT_MOC_LITERAL(11, 205, 24), // "on_pb_trier_type_clicked"
-QT_MOC_LITERAL(12, 230, 21), // "on_pb_rechRef_clicked"
-QT_MOC_LITERAL(13, 252, 19), // "on_pb_image_clicked"
-QT_MOC_LITERAL(14, 272, 27), // "on_le_recherche_textChanged"
-QT_MOC_LITERAL(15, 300, 31), // "on_anim_col_currentIndexChanged"
-QT_MOC_LITERAL(16, 332, 5), // "index"
-QT_MOC_LITERAL(17, 338, 34), // "on_pb_trier_etat_sanitaire_cl..."
-QT_MOC_LITERAL(18, 373, 24) // "on_pb_statistics_clicked"
+QT_MOC_LITERAL(12, 230, 19), // "on_pb_image_clicked"
+QT_MOC_LITERAL(13, 250, 27), // "on_le_recherche_textChanged"
+QT_MOC_LITERAL(14, 278, 31), // "on_anim_col_currentIndexChanged"
+QT_MOC_LITERAL(15, 310, 5), // "index"
+QT_MOC_LITERAL(16, 316, 34), // "on_pb_trier_etat_sanitaire_cl..."
+QT_MOC_LITERAL(17, 351, 24), // "on_pb_statistics_clicked"
+QT_MOC_LITERAL(18, 376, 8) // "showTime"
 
     },
     "animaux\0on_pb_ajouter_clicked\0\0"
@@ -58,11 +58,10 @@ QT_MOC_LITERAL(18, 373, 24) // "on_pb_statistics_clicked"
     "arg1\0on_pb_modifier_clicked\0"
     "on_pb_stat_clicked\0on_pb_upload_2_clicked\0"
     "on_pb_trier_clicked\0on_pb_trier_type_clicked\0"
-    "on_pb_rechRef_clicked\0on_pb_image_clicked\0"
-    "on_le_recherche_textChanged\0"
+    "on_pb_image_clicked\0on_le_recherche_textChanged\0"
     "on_anim_col_currentIndexChanged\0index\0"
     "on_pb_trier_etat_sanitaire_clicked\0"
-    "on_pb_statistics_clicked"
+    "on_pb_statistics_clicked\0showTime"
 };
 #undef QT_MOC_LITERAL
 
@@ -90,9 +89,9 @@ static const uint qt_meta_data_animaux[] = {
       10,    0,   98,    2, 0x08 /* Private */,
       11,    0,   99,    2, 0x08 /* Private */,
       12,    0,  100,    2, 0x08 /* Private */,
-      13,    0,  101,    2, 0x08 /* Private */,
-      14,    1,  102,    2, 0x08 /* Private */,
-      15,    1,  105,    2, 0x08 /* Private */,
+      13,    1,  101,    2, 0x08 /* Private */,
+      14,    1,  104,    2, 0x08 /* Private */,
+      16,    0,  107,    2, 0x08 /* Private */,
       17,    0,  108,    2, 0x08 /* Private */,
       18,    0,  109,    2, 0x08 /* Private */,
 
@@ -107,9 +106,9 @@ static const uint qt_meta_data_animaux[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    6,
-    QMetaType::Void, QMetaType::Int,   16,
+    QMetaType::Void, QMetaType::Int,   15,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -131,12 +130,12 @@ void animaux::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 6: _t->on_pb_upload_2_clicked(); break;
         case 7: _t->on_pb_trier_clicked(); break;
         case 8: _t->on_pb_trier_type_clicked(); break;
-        case 9: _t->on_pb_rechRef_clicked(); break;
-        case 10: _t->on_pb_image_clicked(); break;
-        case 11: _t->on_le_recherche_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 12: _t->on_anim_col_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 13: _t->on_pb_trier_etat_sanitaire_clicked(); break;
-        case 14: _t->on_pb_statistics_clicked(); break;
+        case 9: _t->on_pb_image_clicked(); break;
+        case 10: _t->on_le_recherche_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 11: _t->on_anim_col_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 12: _t->on_pb_trier_etat_sanitaire_clicked(); break;
+        case 13: _t->on_pb_statistics_clicked(); break;
+        case 14: _t->showTime(); break;
         default: ;
         }
     }
