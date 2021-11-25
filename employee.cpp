@@ -37,18 +37,21 @@ employee::employee(QWidget *parent) :
     ui(new Ui::employee)
 {
     ui->setupUi(this);
+    ui->tabemploye->setModel(e.afficher());
+
+
     mCamera =new QCamera(this);
         mCameraViewfinder =new QCameraViewfinder(this);
         mCameraImageCapture =new QCameraImageCapture(mCamera,this);
         mLayout =new QVBoxLayout;
         mOptionMenu =new QMenu("Options", this);
-        mEncenderAction =new QAction("ouvrire",this);
-        mApagarAction =new QAction ("figer", this);
+        mouvrireAction =new QAction("ouvrir",this);
+        mfigerAction =new QAction ("figer", this);
 
-        mCapturarAaction =new QAction("capture", this);
+        mcaptureAaction =new QAction("capture", this);
 
 
-        mOptionMenu->addActions({mEncenderAction ,mApagarAction,mCapturarAaction});
+        mOptionMenu->addActions({mouvrireAction ,mfigerAction,mcaptureAaction});
         ui->optionspush->setMenu(mOptionMenu);
         mCamera->setViewfinder(mCameraViewfinder);
 
@@ -57,10 +60,10 @@ employee::employee(QWidget *parent) :
         mLayout->setMargin(0);
         ui->scrollArea_2->setLayout(mLayout);
 
-        connect(mEncenderAction, &QAction::triggered ,[&]() {mCamera->start();});
-        connect(mApagarAction, &QAction::triggered ,[&]() {mCamera->stop();});
-        connect(mCapturarAaction, &QAction::triggered ,[&]() {
-           auto filename= QFileDialog ::getSaveFileName(this,"capturar","/","Imagen(*.jpg;*jpeg)");
+        connect(mouvrireAction, &QAction::triggered ,[&]() {mCamera->start();});
+        connect(mfigerAction, &QAction::triggered ,[&]() {mCamera->stop();});
+        connect(mcaptureAaction, &QAction::triggered ,[&]() {
+           auto filename= QFileDialog ::getSaveFileName(this,"capture","/","Image(*.jpg;*jpeg)");
             if (filename.isEmpty()){return; }
             mCameraImageCapture->setCaptureDestination(QCameraImageCapture::CaptureToFile);
 
@@ -189,7 +192,11 @@ void employee::on_le_tri_age_clicked()
 {
     ui->tabemploye->setModel(e.triAge());
 }
+void employee::on_le_tri_prenom_clicked()
+{
+    ui->tabemploye->setModel(e.triprenom());
 
+}
 
 
 void employee::on_rech_textChanged(const QString &arg1)
@@ -241,7 +248,7 @@ void employee::on_pb_statistics_clicked()
     QPieSlice *slice = series->slices().at(0);  // *slice pour faire des modifications au niveau du tranche "Animaux nés avant 2010"
     slice->setLabelVisible(true);
     slice->setPen(QPen(Qt::black,2)); // modifier le contour en couleur noir avec taille 2
-    slice->setBrush(Qt::red); // pour changer la couleur de la partie 0 qui est "Animaux nés avant 2010" en rouge
+    slice->setBrush(Qt::yellow); // pour changer la couleur de la partie 0 qui est "Animaux nés avant 2010" en rouge
     QChart *chart = new QChart(); // créer un graphique dynamiquement
     chart->addSeries(series); // ajouter series créé récemment
     chart->setTitle("Statistique des ages"); //ajouter un titre a notre graphique
@@ -250,3 +257,4 @@ void employee::on_pb_statistics_clicked()
 
 
 }
+

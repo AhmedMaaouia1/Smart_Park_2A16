@@ -6,12 +6,12 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
- myDB = QSqlDatabase::addDatabase("QSQLITE");
- myDB.setDatabaseName("C:/oraclexe/app/oracle/product/11.2.0/server/database/hc_xe.dat");
- if(!myDB.open())
-     ui->label->setText("failed to open the database");
- else
-     ui->label->setText("connected...");
+ //myDB = QSqlDatabase::addDatabase("QSQLITE");
+ //myDB.setDatabaseName("C:/oraclexe/app/oracle/product/11.2.0/server/database/hc_xe.dat");
+ //if(!myDB.open())
+    // ui->label->setText("failed to open the database");
+ //else
+     //ui->label->setText("connected...");
 
 
 }

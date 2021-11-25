@@ -309,8 +309,8 @@ color: rgb(255, 255, 255);</string>
     <widget class="QComboBox" name="comboBox">
      <property name="geometry">
       <rect>
-       <x>380</x>
-       <y>340</y>
+       <x>220</x>
+       <y>110</y>
        <width>101</width>
        <height>22</height>
       </rect>
@@ -399,7 +399,20 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
       </rect>
      </property>
      <property name="text">
-      <string>options</string>
+      <string>Camera</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="le_tri_prenom">
+     <property name="geometry">
+      <rect>
+       <x>790</x>
+       <y>60</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>tri prenom</string>
      </property>
     </widget>
    </widget>

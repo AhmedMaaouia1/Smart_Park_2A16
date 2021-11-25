@@ -44,6 +44,8 @@ private slots:
 
     void on_pb_statistics_clicked();
 
+    void on_le_tri_prenom_clicked();
+
 private:
     Ui::employee *ui;
     employe e;
@@ -52,9 +54,9 @@ private:
         QCameraImageCapture *mCameraImageCapture;
         QVBoxLayout *mLayout;
         QMenu *mOptionMenu;
-        QAction *mEncenderAction;
-        QAction *mApagarAction;
-        QAction *mCapturarAaction;
+        QAction *mouvrireAction;
+        QAction *mfigerAction;
+        QAction *mcaptureAaction;
 };
 
 #endif // EMPLOYEE_H

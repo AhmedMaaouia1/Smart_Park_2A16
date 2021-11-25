@@ -34,6 +34,8 @@ public:
     bool modifier(QString,QString,QString,QString,QString,QString);
     QSqlQueryModel * triNom();
      QSqlQueryModel * triAge();
+     QSqlQueryModel * triprenom();
+
  void rechercher(QTableView * tabl,QString,QString);
  int Stat_partie2() ;
  int Stat_partie3() ;

@@ -108,6 +108,12 @@ QSqlQueryModel* employe::triNom()
             model->setQuery("SELECT * FROM employe ORDER BY AGE");
             return model;
  }
+ QSqlQueryModel* employe::triprenom()
+ {
+     QSqlQueryModel * model= new QSqlQueryModel();
+            model->setQuery("SELECT * FROM employe ORDER BY PRENOM");
+            return model;
+ }
  void employe :: rechercher(QTableView * table ,QString Age ,QString Matricule)
       {
           QSqlQueryModel *model= new QSqlQueryModel();
