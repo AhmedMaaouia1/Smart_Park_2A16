@@ -38,6 +38,14 @@ employee::employee(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->tabemploye->setModel(e.afficher());
+    ui->le_matriculd->setValidator( new QIntValidator(0, 9999999, this) );
+    ui->le_matricule->setValidator( new QIntValidator(0, 9999999, this) );
+    ui->le_age->setValidator( new QIntValidator(0, 99, this) );
+    ui->le_nom->setInputMask("AAAAAAAAAAAAA;");
+    ui->le_prenom->setInputMask("AAAAAAAAAAAAA;");
+    ui->le_type->setMaxLength(8);
+
+
 
 
     mCamera =new QCamera(this);
@@ -206,9 +214,10 @@ void employee::on_rech_textChanged(const QString &arg1)
 
 
              QString Age = ui->rech->text();
+             QString nom = ui->rech->text();
              QString Matricule = ui->rech->text();
 
-                E.rechercher(ui->tabemploye,Age,Matricule);
+                E.rechercher(ui->tabemploye,Age,Matricule,nom);
                 if (ui->rech->text().isEmpty())
                 {
                    ui->tabemploye->setModel(E.afficher());

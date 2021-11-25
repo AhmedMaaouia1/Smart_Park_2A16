@@ -114,14 +114,14 @@ QSqlQueryModel* employe::triNom()
             model->setQuery("SELECT * FROM employe ORDER BY PRENOM");
             return model;
  }
- void employe :: rechercher(QTableView * table ,QString Age ,QString Matricule)
+ void employe :: rechercher(QTableView * table ,QString Age ,QString Matricule,QString nom)
       {
           QSqlQueryModel *model= new QSqlQueryModel();
 
           QSqlQuery *query=new QSqlQuery;
 
 
-          query->prepare("select * FROM employe where Age like '%"+Age+"%' or MATRICULE like '%"+Matricule+"%' ;");
+          query->prepare("select * FROM employe where Age like '%"+Age+"%' or MATRICULE like '%"+Matricule+"%'or nom like '%"+nom+"%' ;");
 
 
           query->exec();

@@ -63,10 +63,10 @@
     <widget class="QPushButton" name="pb_supprimer">
      <property name="geometry">
       <rect>
-       <x>290</x>
-       <y>300</y>
-       <width>75</width>
-       <height>23</height>
+       <x>220</x>
+       <y>202</y>
+       <width>81</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -76,10 +76,10 @@
     <widget class="QPushButton" name="pb_modifier">
      <property name="geometry">
       <rect>
-       <x>370</x>
-       <y>300</y>
-       <width>75</width>
-       <height>23</height>
+       <x>220</x>
+       <y>172</y>
+       <width>81</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -89,10 +89,10 @@
     <widget class="QPushButton" name="pb_rechercher">
      <property name="geometry">
       <rect>
-       <x>510</x>
-       <y>90</y>
-       <width>75</width>
-       <height>23</height>
+       <x>410</x>
+       <y>182</y>
+       <width>91</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -102,10 +102,10 @@
     <widget class="QPushButton" name="pb_statistics">
      <property name="geometry">
       <rect>
-       <x>870</x>
-       <y>90</y>
-       <width>81</width>
-       <height>23</height>
+       <x>720</x>
+       <y>180</y>
+       <width>91</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -115,10 +115,10 @@
     <widget class="QPushButton" name="pb_ajouter">
      <property name="geometry">
       <rect>
-       <x>210</x>
-       <y>300</y>
-       <width>75</width>
-       <height>23</height>
+       <x>220</x>
+       <y>142</y>
+       <width>81</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -128,10 +128,10 @@
     <widget class="QPushButton" name="le_tri_nom">
      <property name="geometry">
       <rect>
-       <x>710</x>
-       <y>90</y>
-       <width>75</width>
-       <height>23</height>
+       <x>630</x>
+       <y>120</y>
+       <width>81</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -141,10 +141,10 @@
     <widget class="QScrollArea" name="scrollArea">
      <property name="geometry">
       <rect>
-       <x>490</x>
-       <y>130</y>
-       <width>471</width>
-       <height>331</height>
+       <x>390</x>
+       <y>220</y>
+       <width>561</width>
+       <height>421</height>
       </rect>
      </property>
      <property name="widgetResizable">
@@ -155,8 +155,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>469</width>
-        <height>329</height>
+        <width>559</width>
+        <height>419</height>
        </rect>
       </property>
       <widget class="QTableView" name="tabemploye">
@@ -164,8 +164,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>471</width>
-         <height>331</height>
+         <width>561</width>
+         <height>421</height>
         </rect>
        </property>
       </widget>
@@ -346,8 +346,8 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
     <widget class="QLineEdit" name="rech">
      <property name="geometry">
       <rect>
-       <x>590</x>
-       <y>90</y>
+       <x>510</x>
+       <y>190</y>
        <width>113</width>
        <height>20</height>
       </rect>
@@ -356,10 +356,10 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
     <widget class="QPushButton" name="le_tri_age">
      <property name="geometry">
       <rect>
-       <x>790</x>
-       <y>90</y>
-       <width>75</width>
-       <height>23</height>
+       <x>630</x>
+       <y>180</y>
+       <width>81</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -405,14 +405,14 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
     <widget class="QPushButton" name="le_tri_prenom">
      <property name="geometry">
       <rect>
-       <x>790</x>
-       <y>60</y>
-       <width>75</width>
-       <height>23</height>
+       <x>630</x>
+       <y>150</y>
+       <width>81</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>tri prenom</string>
+      <string>Tri prenom</string>
      </property>
     </widget>
    </widget>

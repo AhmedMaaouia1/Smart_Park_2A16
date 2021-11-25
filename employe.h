@@ -36,7 +36,7 @@ public:
      QSqlQueryModel * triAge();
      QSqlQueryModel * triprenom();
 
- void rechercher(QTableView * tabl,QString,QString);
+ void rechercher(QTableView * tabl,QString,QString,QString);
  int Stat_partie2() ;
  int Stat_partie3() ;
 

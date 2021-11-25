@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "employe.h"
+#include "QValidator"
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -12,7 +14,9 @@ MainWindow::MainWindow(QWidget *parent)
     // ui->label->setText("failed to open the database");
  //else
      //ui->label->setText("connected...");
-
+  ui->lineEdit_password->setStyleSheet("border: 1px solid red");
+  ui->lineEdit_username->setStyleSheet("border: 1px solid green");
+ui->lineEdit_password->setEchoMode(QLineEdit::Password);
 
 }
 
@@ -26,8 +30,10 @@ MainWindow::~MainWindow()
 void MainWindow::on_login_clicked()
 {
     {
+
         QString username = ui->lineEdit_username->text();
         QString password = ui->lineEdit_password->text();
+
 
         if(username ==  "khayri" && password == "khayri") {
             QMessageBox::information(this, "Login", "Username and password is correct");
