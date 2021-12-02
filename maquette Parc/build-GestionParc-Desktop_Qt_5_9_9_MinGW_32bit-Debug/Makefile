@@ -234,10 +234,14 @@ Makefile: ../GestionParc/GestionParc.pro C:/Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/
 		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/yacc.prf \
 		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/lex.prf \
 		../GestionParc/GestionParc.pro \
+		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5MultimediaWidgets.prl \
 		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Charts.prl \
 		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Widgets.prl \
+		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Multimedia.prl \
 		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Gui.prl \
+		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5SerialPort.prl \
 		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Sql.prl \
+		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Network.prl \
 		C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Core.prl
 	$(QMAKE) -o Makefile ..\GestionParc\GestionParc.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 C:/Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/spec_pre.prf:
@@ -413,10 +417,14 @@ C:/Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/exceptions.prf:
 C:/Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/yacc.prf:
 C:/Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/lex.prf:
 ../GestionParc/GestionParc.pro:
+C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5MultimediaWidgets.prl:
 C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Charts.prl:
 C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Widgets.prl:
+C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Multimedia.prl:
 C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Gui.prl:
+C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5SerialPort.prl:
 C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Sql.prl:
+C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Network.prl:
 C:/Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\GestionParc\GestionParc.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"

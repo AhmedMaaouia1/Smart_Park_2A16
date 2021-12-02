@@ -1,6 +1,12 @@
-QT       += core gui
+
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+QT       += core gui  serialport
+
+QT        += core gui sql core network
+QT        += core gui multimedia
+QT += core gui multimedia multimediawidgets
 
 CONFIG += c++11
 QT+= sql
@@ -23,21 +29,46 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     animal.cpp \
     animaux.cpp \
+    arduino.cpp \
+    classarduino.cpp \
+    classclient.cpp \
+    client.cpp \
     connexion.cpp \
+    employe.cpp \
+    employee.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    mainwindow0.cpp \
+    produit.cpp \
+    produitzoo.cpp \
+    smtp.cpp
     qcustomplot.cpp
 
 HEADERS += \
     animal.h \
     animaux.h \
+    arduino.h \
+    classarduino.h \
+    classclient.h \
+    client.h \
     connexion.h \
-    mainwindow.h
+    employe.h \
+    employee.h \
+    mainwindow.h \
+    mainwindow0.h \
+    produit.h \
+    produitzoo.h \
+    smtp.h
     qcustomplot.h
 
 FORMS += \
     animaux.ui \
-    mainwindow.ui
+    arduino.ui \
+    client.ui \
+    employee.ui \
+    mainwindow.ui \
+    mainwindow0.ui \
+    produit.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

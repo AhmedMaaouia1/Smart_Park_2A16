@@ -5,10 +5,14 @@
 #include <QDebug>
 #include "animal.h"
 #include "animaux.h"
+#include "employee.h"
+#include "client.h"
+#include "produit.h"
+#include "arduino.h"
 
-QT_BEGIN_NAMESPACE
+//QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
+//QT_END_NAMESPACE
 
 
 class MainWindow : public QMainWindow
@@ -27,9 +31,21 @@ private slots:
 
     void on_pb_pageFB_clicked();
 
+    void on_pb_gestion_emp_clicked();
+
+    void on_pb_gestion_clients_clicked();
+
+    void on_pb_gestion_produit_clicked();
+
+    void on_pb_niveau_eau_clicked();
+
 private:
     Ui::MainWindow *ui;
     //animaux *animaux;
+    employee *Employee;
+    client *Client;
+    produit *Produit;
+    arduino *Arduino;
 };
 
 #endif // MAINWINDOW_H
