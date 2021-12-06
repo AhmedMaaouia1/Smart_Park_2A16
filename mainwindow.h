@@ -2,8 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QDebug>
-
+#include <etudiant.h>
 namespace Ui {
 class MainWindow;
 }
@@ -14,16 +13,16 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
-
     ~MainWindow();
 
 private slots:
-    void on_Afficher_clicked();
-    void on_Ajouter_clicked();
+    void on_pb_ajouter_clicked();
 
+    void on_pb_supprimer_clicked();
 
 private:
     Ui::MainWindow *ui;
+    etudiant e;
 };
 
 #endif // MAINWINDOW_H
