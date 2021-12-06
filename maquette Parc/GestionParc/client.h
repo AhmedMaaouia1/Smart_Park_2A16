@@ -8,6 +8,9 @@
 #include <QChartView>
 #include <QPieSeries>
 #include "classclient.h"
+#include "mainwindow.h"
+
+class MainWindow;
 
 namespace Ui {
 class client;
@@ -56,9 +59,15 @@ private slots:
 
     void on_pb_statistics_clicked();
 
+
+    void on_pb_retour_client_clicked();
+
+    void on_pb_quitter_client_clicked();
+
 private:
     Ui::client *ui;
     classclient c;
+    MainWindow *mainwindow;
     QStringList files;
     QMediaPlayer *mMediaPlayer ;
 

@@ -2,6 +2,7 @@
 #include "connexion.h"
 #include "ui_animaux.h"
 #include "mainwindow.h"
+#include "mainwindow0.h"
 #include "animal.h"
 #include <QString>
 #include <QDialog>
@@ -28,6 +29,7 @@
 #include <QDateTime>
 
 using namespace std;
+MainWindow *mainw;
 
 animaux::animaux(QWidget *parent) :
     QDialog(parent),
@@ -305,7 +307,7 @@ void animaux::on_anim_col_currentIndexChanged(int index)
 void animaux::on_pb_image_clicked()
 {
     //We used the header <QFileDialog> in order to let the user take an image
-    QString filename= QFileDialog::getOpenFileName(this, tr("choose"),"",tr("Images(*.png *.jpg *.jpeg *.bmp *.gif)"));
+    QString filename= QFileDialog::getOpenFileName(this, tr("choose"),"",tr("Images(*.png *.jpg *.jpeg *.bmp *.gif *.ico)"));
     //filename will take the name of the selected image
     if(QString::compare(filename,QString())!=0) //to see if the user clicked an image so we compare the filename with empty or not
     {
@@ -317,6 +319,9 @@ void animaux::on_pb_image_clicked()
             image= image.scaledToWidth(ui->label_img->width(), Qt::SmoothTransformation);//to make the width of the image equal to the width of the label
             image= image.scaledToHeight(ui->label_img->height(), Qt::SmoothTransformation);
             ui->label_img->setPixmap(QPixmap::fromImage(image));//to set the image in the label_img
+            ui->label_img_2->setPixmap(QPixmap::fromImage(image));
+            ui->label_img_3->setPixmap(QPixmap::fromImage(image));
+            ui->label_img_4->setPixmap(QPixmap::fromImage(image));
         }
         else
         {
@@ -420,4 +425,21 @@ void animaux::showTime()
     }
 
     ui->Digital_clock->setText(time_text);
+}
+
+void animaux::on_pb_quitter_anim_clicked()
+{
+
+    //MainWindow* mainwindow = new MainWindow(this);
+    //mainwindow->show();
+    close();
+    //this->setVisible(false);
+}
+
+void animaux::on_pb_retour_anim_clicked()
+{
+    //this->destroy();
+    mainw = new MainWindow(this);
+    mainw->show();
+    this->hide();
 }

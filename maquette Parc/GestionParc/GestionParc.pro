@@ -14,7 +14,6 @@ CONFIG += console
 QT+= gui
 QT += core gui
 QT += core gui charts
-
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
@@ -36,9 +35,11 @@ SOURCES += \
     connexion.cpp \
     employe.cpp \
     employee.cpp \
+    interfacearduino2.cpp \
     main.cpp \
     mainwindow.cpp \
     mainwindow0.cpp \
+    opendoor.cpp \
     produit.cpp \
     produitzoo.cpp \
     smtp.cpp
@@ -54,8 +55,10 @@ HEADERS += \
     connexion.h \
     employe.h \
     employee.h \
+    interfacearduino2.h \
     mainwindow.h \
     mainwindow0.h \
+    opendoor.h \
     produit.h \
     produitzoo.h \
     smtp.h
@@ -66,9 +69,12 @@ FORMS += \
     arduino.ui \
     client.ui \
     employee.ui \
+    interfacearduino2.ui \
     mainwindow.ui \
     mainwindow0.ui \
     produit.ui
+
+RC_ICONS = zoo_rni.ico
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

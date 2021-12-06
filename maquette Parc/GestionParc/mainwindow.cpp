@@ -4,9 +4,11 @@
 #include "animal.h"
 #include "client.h"
 #include "produit.h"
+#include "mainwindow0.h"
 #include "classclient.h"
 #include "animaux.h"
 #include "classarduino.h"
+#include "opendoor.h"
 #include <QString>
 #include <QDialog>
 #include <QMessageBox>
@@ -14,12 +16,14 @@
 #include <QDesktopServices>
 #include <QUrl>
 
+mainwindow0 *main0;
+class client;
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
 }
 
 MainWindow::~MainWindow()
@@ -30,8 +34,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pb_gererAn_clicked()
 {
-    //
-    animaux animaux;
+    hide();
     animaux.setModal(true);
     animaux.exec();
     //animaux =new animaux(this);
@@ -47,26 +50,53 @@ void MainWindow::on_pb_pageFB_clicked()
 
 void MainWindow::on_pb_gestion_emp_clicked()
 {
-    //
-    Employee = new employee(this);
-    Employee->show();
+    hide();
+    employee employee;
+    employee.setModal(true);
+    employee.exec();
 }
 
 void MainWindow::on_pb_gestion_clients_clicked()
 {
-    //
-    Client = new client(this);
-    Client->show();
+    hide();
+    client client;
+    client.setModal(true);
+    client.exec();
 }
 
 void MainWindow::on_pb_gestion_produit_clicked()
 {
-    Produit = new produit(this);
-    Produit->show();
+    hide();
+    produit.setModal(true);
+    produit.exec();
 }
 
 void MainWindow::on_pb_niveau_eau_clicked()
 {
-    Arduino = new arduino(this);
-    Arduino->show();
+    hide();
+    arduino arduino;
+    arduino.setModal(true);
+    arduino.exec();
+}
+
+
+void MainWindow::on_pb_retour_clicked()
+{
+    main0 = new mainwindow0(this);
+    main0->show();
+    this->hide();
+
+}
+
+void MainWindow::on_pb_quitter_clicked()
+{
+    close();
+}
+
+void MainWindow::on_pb_controle_porte_clicked()
+{
+    hide();
+    InterfaceArduino2 InterfaceArduino2;
+    InterfaceArduino2.setModal(true);
+    InterfaceArduino2.exec();
 }

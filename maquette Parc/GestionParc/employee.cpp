@@ -1,6 +1,8 @@
 #include "employee.h"
 #include "ui_employee.h"
 #include "employe.h"
+#include "mainwindow.h"
+#include "mainwindow.h"
 #include <QIntValidator>
 #include "QSqlQuery"
 #include "QStringListModel"
@@ -31,6 +33,8 @@
 #include <QtCharts/QCategoryAxis>
 #include <QtCharts/QPieSeries>
 #include <QtCharts/QPieSlice>
+
+MainWindow *mainwe;
 
 employee::employee(QWidget *parent) :
     QDialog(parent),
@@ -238,4 +242,17 @@ void employee::on_pb_statistics_clicked()
     chartview->setParent(ui->horizontal_stat); // pour afficher les graphiques dans le label
 
 
+}
+
+
+void employee::on_pb_retour_employee_clicked()
+{
+    mainwe = new MainWindow(this);
+    mainwe->show();
+    //this->hide();
+}
+
+void employee::on_pb_quitter_employe_clicked()
+{
+    close();
 }

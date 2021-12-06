@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>ZOO'RNI</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QOpenGLWidget" name="openGLWidget">
@@ -47,7 +47,7 @@
     <property name="geometry">
      <rect>
       <x>280</x>
-      <y>240</y>
+      <y>180</y>
       <width>241</width>
       <height>31</height>
      </rect>
@@ -59,9 +59,9 @@
    <widget class="QPushButton" name="pb_pageFB">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>450</y>
-      <width>151</width>
+      <x>280</x>
+      <y>300</y>
+      <width>241</width>
       <height>31</height>
      </rect>
     </property>
@@ -73,7 +73,7 @@
     <property name="geometry">
      <rect>
       <x>280</x>
-      <y>200</y>
+      <y>140</y>
       <width>241</width>
       <height>31</height>
      </rect>
@@ -86,7 +86,7 @@
     <property name="geometry">
      <rect>
       <x>280</x>
-      <y>280</y>
+      <y>220</y>
       <width>241</width>
       <height>31</height>
      </rect>
@@ -99,7 +99,7 @@
     <property name="geometry">
      <rect>
       <x>280</x>
-      <y>320</y>
+      <y>260</y>
       <width>241</width>
       <height>31</height>
      </rect>
@@ -111,14 +111,53 @@
    <widget class="QPushButton" name="pb_niveau_eau">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>450</y>
-      <width>151</width>
+      <x>280</x>
+      <y>340</y>
+      <width>241</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
      <string>Controler niveau d'eau</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pb_retour">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>490</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Retour</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pb_quitter">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>480</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Quitter</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pb_controle_porte">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>380</y>
+      <width>241</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Controler la porte</string>
     </property>
    </widget>
   </widget>

@@ -20,6 +20,7 @@
 
 using namespace std;
 
+MainWindow *mainwp;
 
 produit::produit(QWidget *parent) :
     QDialog(parent),
@@ -169,10 +170,6 @@ void produit::on_pb_calcul_clicked()
 }
 
 
-
-
-
-
 void produit::on_pb_statics_clicked()
 {
     double b=P.Stat_partie2(); // stat_partie2() pour determiner le nombre des produits prix moins de 10000
@@ -208,4 +205,17 @@ void produit::on_pb_statics_clicked()
           QChartView *chartview = new QChartView(chart); // créer widget autonome pouvant afficher des graphiques
           chartview->setParent(ui->horizontal_stat); // pour afficher les graphiques dans le label
 
+}
+
+
+void produit::on_pb_retour_produit_clicked()
+{
+    mainwp = new MainWindow(this);
+    mainwp->show();
+    this->hide();
+}
+
+void produit::on_pb_quitter_produit_clicked()
+{
+    close();
 }

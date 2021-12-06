@@ -23,6 +23,8 @@ private:
     QString arduino_port_name;
     bool arduino_is_available;
     QByteArray data;  // contenant les données lues à partir d'Arduino
+public:
+    QString s;
 };
 
 #endif // CLASSARDUINO_H

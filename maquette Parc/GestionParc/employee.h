@@ -3,9 +3,14 @@
 
 #include <QDialog>
 #include "employe.h"
+#include "mainwindow.h"
+#include "mainwindow0.h"
 #include <QtCharts>
 #include <QChartView>
 #include <QPieSeries>
+
+class MainWindow;
+class mainwindow0;
 
 namespace Ui {
 class employee;
@@ -44,6 +49,10 @@ private slots:
 
 
     void on_pb_statistics_clicked();
+
+    void on_pb_retour_employee_clicked();
+
+    void on_pb_quitter_employe_clicked();
 
 private:
     Ui::employee *ui;

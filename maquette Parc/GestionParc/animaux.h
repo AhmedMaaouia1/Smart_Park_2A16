@@ -4,11 +4,14 @@
 #include <QMainWindow>
 #include <QDebug>
 #include "animal.h"
+//#include "mainwindow.h"
 #include <QFileDialog>
 #include <QSortFilterProxyModel>
 #include <QtCharts>
 #include <QChartView>
 #include <QPieSeries>
+
+class MainWindow;
 
 namespace Ui {
 class animaux;
@@ -58,9 +61,14 @@ private slots:
 
     void showTime();
 
+    void on_pb_quitter_anim_clicked();
+
+    void on_pb_retour_anim_clicked();
+
 private:
     Ui::animaux *ui;
     animal a;
+    MainWindow *mainwindow;
     int col_anim=-1;
 };
 

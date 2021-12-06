@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Niveau d'eau</string>
   </property>
   <widget class="QLabel" name="le_cadre">
    <property name="geometry">
@@ -35,10 +35,10 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>110</y>
-     <width>47</width>
-     <height>13</height>
+     <x>240</x>
+     <y>410</y>
+     <width>291</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
@@ -61,60 +61,47 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>105</x>
-     <y>205</y>
-     <width>161</width>
+     <x>90</x>
+     <y>250</y>
+     <width>191</width>
      <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#ffffff;&quot;&gt;Ajouter de l'eau&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#ffffff;&quot;&gt;Alerter le guardien&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pb_ajout_eau">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>210</y>
+     <x>360</x>
+     <y>230</y>
      <width>121</width>
      <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string>Ajout</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>300</y>
-     <width>241</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#ffffff;&quot;&gt;Arreter l'ajout de l'eau&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>Niveau insuffisant</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pb_arret_eau">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>300</y>
+     <x>360</x>
+     <y>280</y>
      <width>121</width>
      <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string>Arreter</string>
+    <string>Niveau Suffisant</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_niveau_eau">
    <property name="geometry">
     <rect>
-     <x>275</x>
-     <y>415</y>
+     <x>280</x>
+     <y>480</y>
      <width>271</width>
      <height>41</height>
     </rect>
@@ -133,15 +120,39 @@
     </rect>
    </property>
   </widget>
+  <widget class="QLabel" name="lab_niveau">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>410</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="lcdNumber">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>250</y>
+     <width>64</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
   <zorder>le_cadre</zorder>
   <zorder>lineEdit</zorder>
   <zorder>label_3</zorder>
   <zorder>label</zorder>
   <zorder>label_2</zorder>
   <zorder>pb_ajout_eau</zorder>
-  <zorder>label_4</zorder>
   <zorder>pb_arret_eau</zorder>
   <zorder>label_niveau_eau</zorder>
+  <zorder>lab_niveau</zorder>
+  <zorder>lcdNumber</zorder>
  </widget>
  <resources/>
  <connections/>

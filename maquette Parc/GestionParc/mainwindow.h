@@ -9,6 +9,7 @@
 #include "client.h"
 #include "produit.h"
 #include "arduino.h"
+#include "interfacearduino2.h"
 
 //QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -39,12 +40,18 @@ private slots:
 
     void on_pb_niveau_eau_clicked();
 
+
+    void on_pb_retour_clicked();
+
+    void on_pb_quitter_clicked();
+
+    void on_pb_controle_porte_clicked();
+
 private:
     Ui::MainWindow *ui;
-    //animaux *animaux;
-    employee *Employee;
-    client *Client;
-    produit *Produit;
+    animaux animaux;
+    //employee employee;
+    produit produit;
     arduino *Arduino;
 };
 

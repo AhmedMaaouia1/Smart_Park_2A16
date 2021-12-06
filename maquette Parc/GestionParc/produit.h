@@ -7,6 +7,8 @@
 #include "produitzoo.h"
 #include <iostream>
 
+class MainWindow;
+
 namespace Ui {
 class produit;
 }
@@ -41,6 +43,8 @@ private slots:
 
     void on_pb_statics_clicked();
 
+    void on_pb_retour_produit_clicked();
+    void on_pb_quitter_produit_clicked();
 
 private:
     Ui::produit *ui;

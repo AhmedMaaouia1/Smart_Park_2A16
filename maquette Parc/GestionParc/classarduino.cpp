@@ -17,6 +17,7 @@ QSerialPort *classarduino::getserial()
 {
    return serial;
 }
+
 int classarduino::connect_arduino()
 {   // recherche du port sur lequel la carte arduino identifée par  arduino_uno_vendor_id
     // est connectée
@@ -61,9 +62,9 @@ int classarduino::close_arduino()
 {
     if(serial->isReadable()){
          data=serial->readAll(); //récupérer les données reçues
-
-         return data;
+         s = QString::fromStdString(data.toStdString());
     }
+    return data;
  }
 
 

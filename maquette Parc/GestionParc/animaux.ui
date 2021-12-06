@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Gestion des animaux</string>
   </property>
   <widget class="QTabWidget" name="Ajouter_animal">
    <property name="geometry">
@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="tab_3">
     <attribute name="title">
@@ -33,7 +33,7 @@
      <property name="geometry">
       <rect>
        <x>170</x>
-       <y>160</y>
+       <y>110</y>
        <width>101</width>
        <height>31</height>
       </rect>
@@ -46,7 +46,7 @@
      <property name="geometry">
       <rect>
        <x>280</x>
-       <y>160</y>
+       <y>110</y>
        <width>91</width>
        <height>31</height>
       </rect>
@@ -78,7 +78,7 @@
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>200</y>
+       <y>160</y>
        <width>701</width>
        <height>291</height>
       </rect>
@@ -88,7 +88,7 @@
      <property name="geometry">
       <rect>
        <x>530</x>
-       <y>160</y>
+       <y>110</y>
        <width>121</width>
        <height>31</height>
       </rect>
@@ -101,7 +101,7 @@
      <property name="geometry">
       <rect>
        <x>670</x>
-       <y>20</y>
+       <y>10</y>
        <width>141</width>
        <height>141</height>
       </rect>
@@ -114,7 +114,7 @@
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>160</y>
+       <y>110</y>
        <width>101</width>
        <height>31</height>
       </rect>
@@ -127,7 +127,7 @@
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>120</y>
+       <y>70</y>
        <width>101</width>
        <height>31</height>
       </rect>
@@ -173,7 +173,7 @@
      <property name="geometry">
       <rect>
        <x>380</x>
-       <y>160</y>
+       <y>110</y>
        <width>141</width>
        <height>31</height>
       </rect>
@@ -199,15 +199,15 @@
       </font>
      </property>
      <property name="text">
-      <string> </string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="DateTime">
      <property name="geometry">
       <rect>
-       <x>350</x>
-       <y>100</y>
-       <width>151</width>
+       <x>310</x>
+       <y>460</y>
+       <width>161</width>
        <height>41</height>
       </rect>
      </property>
@@ -222,6 +222,32 @@
       <string/>
      </property>
     </widget>
+    <widget class="QPushButton" name="pb_quitter_anim">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>470</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Quitter</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pb_retour_anim">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>470</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Retour</string>
+     </property>
+    </widget>
     <zorder>le_cadre</zorder>
     <zorder>pb_trier</zorder>
     <zorder>pb_trier_type</zorder>
@@ -233,6 +259,8 @@
     <zorder>pb_trier_etat_sanitaire</zorder>
     <zorder>Digital_clock</zorder>
     <zorder>DateTime</zorder>
+    <zorder>pb_quitter_anim</zorder>
+    <zorder>pb_retour_anim</zorder>
    </widget>
    <widget class="QWidget" name="tab_5">
     <attribute name="title">
@@ -424,6 +452,19 @@
       <string>Upload Reference</string>
      </property>
     </widget>
+    <widget class="QLabel" name="label_img_2">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>10</y>
+       <width>141</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -576,6 +617,19 @@
       </rect>
      </property>
     </widget>
+    <widget class="QLabel" name="label_img_3">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>10</y>
+       <width>141</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
     <zorder>label_6</zorder>
     <zorder>label</zorder>
     <zorder>label_2</zorder>
@@ -588,6 +642,7 @@
     <zorder>label_5</zorder>
     <zorder>le_san</zorder>
     <zorder>le_cage</zorder>
+    <zorder>label_img_3</zorder>
    </widget>
    <widget class="QWidget" name="tab_4">
     <attribute name="title">
@@ -698,6 +753,19 @@
      </property>
      <property name="text">
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;pour charger les references&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_img_4">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>10</y>
+       <width>141</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
      </property>
     </widget>
    </widget>

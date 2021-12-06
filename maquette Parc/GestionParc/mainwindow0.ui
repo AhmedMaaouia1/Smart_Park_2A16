@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>ZOO'RNI</string>
   </property>
   <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
@@ -51,7 +51,7 @@
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>360</x>
+       <x>380</x>
        <y>50</y>
        <width>151</width>
        <height>61</height>
@@ -76,6 +76,12 @@ color: rgb(255, 255, 255);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">font: 11pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>User Name</string>
      </property>
     </widget>
     <widget class="QLabel" name="user">
@@ -125,11 +131,20 @@ color: rgb(255, 255, 255);
      <property name="styleSheet">
       <string notr="true">font: 11pt &quot;MS Shell Dlg 2&quot;;</string>
      </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+     <property name="placeholderText">
+      <string>Password</string>
+     </property>
     </widget>
     <widget class="QPushButton" name="login">
      <property name="geometry">
       <rect>
-       <x>360</x>
+       <x>410</x>
        <y>370</y>
        <width>121</width>
        <height>41</height>

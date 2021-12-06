@@ -1,11 +1,17 @@
 #include "arduino.h"
 #include "ui_arduino.h"
+#include <string>
+#include <iostream>
+
+using namespace std;
 
 arduino::arduino(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::arduino)
 {
     ui->setupUi(this);
+    A.s="";
+    update_label();
     int ret=A.connect_arduino(); // lancer la connexion à arduino
     switch(ret){
     case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
@@ -26,14 +32,27 @@ arduino::~arduino()
 void arduino::update_label()
 {
     data=A.read_from_arduino();
+    string s = data.toStdString();
+    cout<<"s: "<<s<<endl;
 
-    if(data=="1")
+    QString val = QString::fromStdString(data.toStdString());
+    ui->lcdNumber->display(val);
+    qDebug() << val;
 
-        ui->label_3->setText("Niveau d'eau en train d'augumenter "); // si les données reçues de arduino via la liaison série sont égales à 1
+    //if(data=="1")
 
-    else if (data=="0")
+        //ui->label_3->setText("Niveau nécessite une augumentation "); // si les données reçues de arduino via la liaison série sont égales à 1
 
-        ui->label_3->setText("Niveau d'eau stable supérieur à 25%");   // si les données reçues de arduino via la liaison série sont égales à 0
+    //else if (data=="0")
+
+       //ui->label_3->setText("Niveau d'eau stable supérieur à 25%");   // si les données reçues de arduino via la liaison série sont égales à 0
+
+    //else
+        if((data!="1")&&(data!="0"))
+       {
+        ui->label_3->setText("Niveau d'eau : ");   // si les données reçues de arduino via la liaison série sont égales à 0
+        ui->lab_niveau->setText(val);
+       }
 
 }
 

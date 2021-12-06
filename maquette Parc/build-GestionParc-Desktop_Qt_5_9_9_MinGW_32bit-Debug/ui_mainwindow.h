@@ -36,6 +36,9 @@ public:
     QPushButton *pb_gestion_produit;
     QPushButton *pb_gestion_clients;
     QPushButton *pb_niveau_eau;
+    QPushButton *pb_retour;
+    QPushButton *pb_quitter;
+    QPushButton *pb_controle_porte;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -56,22 +59,31 @@ public:
         label_9->setScaledContents(true);
         pb_gererAn = new QPushButton(centralwidget);
         pb_gererAn->setObjectName(QStringLiteral("pb_gererAn"));
-        pb_gererAn->setGeometry(QRect(280, 240, 241, 31));
+        pb_gererAn->setGeometry(QRect(280, 180, 241, 31));
         pb_pageFB = new QPushButton(centralwidget);
         pb_pageFB->setObjectName(QStringLiteral("pb_pageFB"));
-        pb_pageFB->setGeometry(QRect(600, 450, 151, 31));
+        pb_pageFB->setGeometry(QRect(280, 300, 241, 31));
         pb_gestion_emp = new QPushButton(centralwidget);
         pb_gestion_emp->setObjectName(QStringLiteral("pb_gestion_emp"));
-        pb_gestion_emp->setGeometry(QRect(280, 200, 241, 31));
+        pb_gestion_emp->setGeometry(QRect(280, 140, 241, 31));
         pb_gestion_produit = new QPushButton(centralwidget);
         pb_gestion_produit->setObjectName(QStringLiteral("pb_gestion_produit"));
-        pb_gestion_produit->setGeometry(QRect(280, 280, 241, 31));
+        pb_gestion_produit->setGeometry(QRect(280, 220, 241, 31));
         pb_gestion_clients = new QPushButton(centralwidget);
         pb_gestion_clients->setObjectName(QStringLiteral("pb_gestion_clients"));
-        pb_gestion_clients->setGeometry(QRect(280, 320, 241, 31));
+        pb_gestion_clients->setGeometry(QRect(280, 260, 241, 31));
         pb_niveau_eau = new QPushButton(centralwidget);
         pb_niveau_eau->setObjectName(QStringLiteral("pb_niveau_eau"));
-        pb_niveau_eau->setGeometry(QRect(40, 450, 151, 31));
+        pb_niveau_eau->setGeometry(QRect(280, 340, 241, 31));
+        pb_retour = new QPushButton(centralwidget);
+        pb_retour->setObjectName(QStringLiteral("pb_retour"));
+        pb_retour->setGeometry(QRect(30, 490, 93, 28));
+        pb_quitter = new QPushButton(centralwidget);
+        pb_quitter->setObjectName(QStringLiteral("pb_quitter"));
+        pb_quitter->setGeometry(QRect(660, 480, 93, 28));
+        pb_controle_porte = new QPushButton(centralwidget);
+        pb_controle_porte->setObjectName(QStringLiteral("pb_controle_porte"));
+        pb_controle_porte->setGeometry(QRect(280, 380, 241, 28));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -88,7 +100,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "ZOO'RNI", Q_NULLPTR));
         label_9->setText(QString());
         pb_gererAn->setText(QApplication::translate("MainWindow", "Gestion des Animaux", Q_NULLPTR));
         pb_pageFB->setText(QApplication::translate("MainWindow", "Ouvrir Site Web", Q_NULLPTR));
@@ -96,6 +108,9 @@ public:
         pb_gestion_produit->setText(QApplication::translate("MainWindow", "Gestion des produits", Q_NULLPTR));
         pb_gestion_clients->setText(QApplication::translate("MainWindow", "Gestion des clients", Q_NULLPTR));
         pb_niveau_eau->setText(QApplication::translate("MainWindow", "Controler niveau d'eau", Q_NULLPTR));
+        pb_retour->setText(QApplication::translate("MainWindow", "Retour", Q_NULLPTR));
+        pb_quitter->setText(QApplication::translate("MainWindow", "Quitter", Q_NULLPTR));
+        pb_controle_porte->setText(QApplication::translate("MainWindow", "Controler la porte", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -1,11 +1,11 @@
 #include "client.h"
 #include "ui_client.h"
 #include "classclient.h"
+#include "mainwindow.h"
 #include <QIntValidator>
 #include "QSqlQuery"
 #include "QStringListModel"
 #include <QMessageBox>
-#include "mainwindow.h"
 #include "smtp.h"
 #include <QFileDialog>
 #include <QMediaPlayer>
@@ -20,6 +20,9 @@
 #include <QtCharts/QCategoryAxis>
 #include <QtCharts/QPieSeries>
 #include <QtCharts/QPieSlice>
+
+
+MainWindow *mainwc;
 
 client::client(QWidget *parent) :
     QDialog(parent),
@@ -313,9 +316,6 @@ void client::on_pb_statistics_clicked()
            s3=(k*100)/(b+k);   // pourcentage des animaux nés apres 2010
 
        }
-
-
-
        QPieSeries *series = new QPieSeries(); // La serie des elements qu'on va faire les stats
        series->append("Client agé moins de 20ans",s2); // pour ajouter une partie nommée "Animaux nés avant 2010" avec une pourcentage de s2
        series->append("Client agé plus de 20ans",s3); // pour ajouter une partie nommée "Animaux nés apres 2010" avec une pourcentage de s3
@@ -329,7 +329,18 @@ void client::on_pb_statistics_clicked()
        QChartView *chartview = new QChartView(chart); // créer widget autonome pouvant afficher des graphiques
        chartview->setParent(ui->horizontal_stat); // pour afficher les graphiques dans le label
 
+}
 
 
 
+void client::on_pb_retour_client_clicked()
+{
+    mainwc = new MainWindow(this);
+    mainwc->show();
+    //this->hide();
+}
+
+void client::on_pb_quitter_client_clicked()
+{
+    close();
 }

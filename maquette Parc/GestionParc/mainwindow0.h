@@ -9,7 +9,11 @@
 #include <QMessageBox>
 #include "animal.h"
 #include "animaux.h"
+#include "employe.h"
 #include "employee.h"
+#include "client.h"
+#include "classclient.h"
+#include "produit.h"
 #include "mainwindow.h"
 
 
