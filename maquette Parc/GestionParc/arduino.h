@@ -24,6 +24,8 @@ private slots:
 
     void on_pb_arret_eau_clicked();
 
+    void on_pb_retour_arduino0_clicked();
+
 private:
     Ui::arduino *ui;
     QByteArray data; // variable contenant les données reçues

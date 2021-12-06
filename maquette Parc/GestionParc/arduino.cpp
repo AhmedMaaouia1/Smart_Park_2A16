@@ -1,10 +1,11 @@
 #include "arduino.h"
 #include "ui_arduino.h"
+#include "mainwindow.h"
 #include <string>
 #include <iostream>
 
 using namespace std;
-
+MainWindow *mainwi;
 arduino::arduino(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::arduino)
@@ -64,4 +65,9 @@ void arduino::on_pb_ajout_eau_clicked()
 void arduino::on_pb_arret_eau_clicked()
 {
     A.write_to_arduino("0"); //envoyer 0 à arduino
+}
+
+void arduino::on_pb_retour_arduino0_clicked()
+{
+
 }

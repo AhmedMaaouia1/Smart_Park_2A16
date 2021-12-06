@@ -133,14 +133,30 @@
     <string/>
    </property>
   </widget>
-  <widget class="QLCDNumber" name="lcdNumber">
+  <widget class="QPushButton" name="pb_retour_arduino0">
    <property name="geometry">
     <rect>
-     <x>600</x>
-     <y>250</y>
-     <width>64</width>
-     <height>23</height>
+     <x>40</x>
+     <y>520</y>
+     <width>93</width>
+     <height>28</height>
     </rect>
+   </property>
+   <property name="text">
+    <string>Retour</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pb_quitter_arduino0">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>520</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Quitter</string>
    </property>
   </widget>
   <zorder>le_cadre</zorder>
@@ -152,7 +168,8 @@
   <zorder>pb_arret_eau</zorder>
   <zorder>label_niveau_eau</zorder>
   <zorder>lab_niveau</zorder>
-  <zorder>lcdNumber</zorder>
+  <zorder>pb_retour_arduino0</zorder>
+  <zorder>pb_quitter_arduino0</zorder>
  </widget>
  <resources/>
  <connections/>
